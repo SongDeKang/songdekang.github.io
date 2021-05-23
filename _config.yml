@@ -105,3 +105,4 @@ theme: liveForCode
 deploy:
   type: git
   repo: https://github.com/SongDeKang/SongDekang.github.io.git #https://bitbucket.org/JohnSmith/johnsmith.bitbucket.io
+  branch: gh-pages
