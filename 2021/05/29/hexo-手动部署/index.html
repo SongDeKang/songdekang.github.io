@@ -6,7 +6,7 @@
     <meta name="referrer" content="origin">
     <meta http-equiv="Cache-Control" content="no-transform">
     <meta http-equiv="Cache-Control" content="no-siteapp">
-    <title>必应壁纸</title>
+    <title>hexo 手动部署</title>
 
     <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/LongCang.css">
     <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/Monda.css">
@@ -31,19 +31,19 @@
     <div class="header">
         <div class="vertical">
             <div class="inner">
-                <h1 class="header-subtitle">必应壁纸</h1>
+                <h1 class="header-subtitle">hexo 手动部署</h1>
                 <div class="header-subinfo">
                     <p class="article-info-text">
                         <span>
                             <i class="iconfont icon-time"></i> 发表时间：2021-05-29
                         </span>
                         
-                            <span id="/2021/05/29/必应壁纸/" class="leancloud_visitors" data-flag-title="必应壁纸">
+                            <span id="/2021/05/29/hexo-手动部署/" class="leancloud_visitors" data-flag-title="hexo 手动部署">
                                 <i class="iconfont icon-browse"></i> 阅读：<sapn class="leancloud-visitors-count"></span>
                             </span>
                         
                         <span>
-                            <i class="iconfont icon-interactive"></i> 评论：<span class="valine-comment-count" data-xid="/2021/05/29/必应壁纸/"></span>
+                            <i class="iconfont icon-interactive"></i> 评论：<span class="valine-comment-count" data-xid="/2021/05/29/hexo-手动部署/"></span>
                         </span>  
                     </p>                 
                 </div>
@@ -57,10 +57,13 @@
         <div id="article">
     <div class="toc"></div>
     <div class="article-body">
-        <p>之前,就从网上找到一个 python + windows的批处理文件的脚本,每天同步必应壁纸为 windows 桌面。<br>还挺好用的，只是每次下载好的图片，下次执行就设定清除了，我觉得有必要都保存下来，作为以后博客的插图。昨天就看看改了一下, 使用 python 的 <code>datetime.datetime.now().date()</code> 给下载的图片拼接上了日期,也挺有意思。</p>
-<p>就是可惜，博客我还都不会加图片，那些页面模板的样式也都不会改。ejs 其实之前也用过一下，不过都忘了。</p>
-<p>现在是觉得 hexo 自动部署博客页面，文件全部上传覆盖之前分支太慢了，我看看自己手动上传会不会好一点。现在试验一下。</p>
-
+        <h2 id="博客页面分支手动提交"><a href="#博客页面分支手动提交" class="headerlink" title="博客页面分支手动提交"></a>博客页面分支手动提交</h2><p>果然，要比 <code>hexo-deployer-git</code> 部署提交新文件全覆盖旧文件快的多。</p>
+<p>那么问题就来了：</p>
+<h3 id="该怎么实现-git-自动提交"><a href="#该怎么实现-git-自动提交" class="headerlink" title="该怎么实现 git 自动提交"></a>该怎么实现 git 自动提交</h3><blockquote>
+<p>不知道有没有可以用的脚本<br>最好还可以带上提交时间  </p>
+</blockquote>
+<p>plus: 现在这把宁芝键盘让我对它的摩擦音有点受不了</p>
+<h2 id="自动提交批处理文件代码"><a href="#自动提交批处理文件代码" class="headerlink" title="自动提交批处理文件代码"></a>自动提交批处理文件代码</h2><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"> </span><br><span class="line"><span class="built_in">title</span> GIT一键提交</span><br><span class="line"><span class="built_in">color</span> <span class="number">3</span></span><br><span class="line"><span class="built_in">echo</span> 当前目录是：<span class="variable">%cd%</span></span><br><span class="line"><span class="built_in">echo</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> 生成博客静态文件</span><br><span class="line">hexo generater</span><br><span class="line"><span class="built_in">echo</span>;</span><br><span class="line"> </span><br><span class="line"><span class="built_in">echo</span> 开始添加变更：git add .</span><br><span class="line">git add .</span><br><span class="line"><span class="built_in">echo</span>;</span><br><span class="line"> </span><br><span class="line"><span class="built_in">set</span> /p declation=输入提交的commit信息:</span><br><span class="line">git commit -m &quot;<span class="variable">%declation%</span>&quot;</span><br><span class="line"><span class="built_in">echo</span>;</span><br><span class="line"> </span><br><span class="line"><span class="built_in">echo</span> 将源文件变更提交到远程自己分支：git push origin master</span><br><span class="line">git push origin master</span><br><span class="line"><span class="built_in">echo</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> 开始提交博客静态文件</span><br><span class="line"><span class="built_in">cd</span> public</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> 当前目录是：<span class="variable">%cd%</span></span><br><span class="line"><span class="built_in">echo</span>;</span><br><span class="line"> </span><br><span class="line"><span class="built_in">echo</span> 开始添加变更：git add .</span><br><span class="line">git add .</span><br><span class="line"><span class="built_in">echo</span>;</span><br><span class="line"> </span><br><span class="line"><span class="built_in">echo</span> 添加提交的commit信息: 更新于 <span class="variable">%date:~0,10%</span> <span class="variable">%time:~0,5%</span></span><br><span class="line">git commit -m &quot;更新于 <span class="variable">%date:~0,10%</span> <span class="variable">%time:~0,5%</span>&quot;</span><br><span class="line"><span class="built_in">echo</span>;</span><br><span class="line"> </span><br><span class="line"><span class="built_in">echo</span> 将源文件变更提交到远程分支：git push origin gh-pages</span><br><span class="line">git push origin gh-pages</span><br><span class="line"><span class="built_in">echo</span>;</span><br><span class="line"> </span><br><span class="line"><span class="built_in">echo</span> 执行完毕！</span><br><span class="line"><span class="built_in">echo</span>;</span><br><span class="line"> </span><br><span class="line"><span class="built_in">pause</span></span><br></pre></td></tr></table></figure>
         <p class="suffix-end">__END__</p>
         <div class="suffix-box">
             <div class="suffix-box-left">
@@ -69,7 +72,7 @@
             <div class="suffix-box-right">
                 <span class="suffix-box-title">文章作者</span>：Just For Fun
                 <br>
-                <span class="suffix-box-title">文章出处</span>：<a href="/2021/05/29/%E5%BF%85%E5%BA%94%E5%A3%81%E7%BA%B8/" target="_blank">必应壁纸</a>
+                <span class="suffix-box-title">文章出处</span>：<a href="/2021/05/29/hexo-%E6%89%8B%E5%8A%A8%E9%83%A8%E7%BD%B2/" target="_blank">hexo 手动部署</a>
                 <br>
                 <span class="suffix-box-title">作者签名</span>：简单地活着, 肆意又精彩.
                 <br>
@@ -86,11 +89,8 @@
         
         <div class="article-prev-next">
             
-                <a href="/2021/05/29/hexo-%E6%89%8B%E5%8A%A8%E9%83%A8%E7%BD%B2/" class="prev-prefix">« </a> 上一篇：    <a href="/2021/05/29/hexo-%E6%89%8B%E5%8A%A8%E9%83%A8%E7%BD%B2/" title="发布于 2021-05-29 10:42">hexo 手动部署</a>
-                <br>
             
-            
-                <a href="/2021/05/26/%E6%97%A5%E7%9F%A5%E5%BD%95/" class="next-prefix">» </a> 下一篇：    <a href="/2021/05/26/%E6%97%A5%E7%9F%A5%E5%BD%95/" title="发布于 2021-05-26 11:08">日知录</a>
+                <a href="/2021/05/29/%E5%BF%85%E5%BA%94%E5%A3%81%E7%BA%B8/" class="next-prefix">» </a> 下一篇：    <a href="/2021/05/29/%E5%BF%85%E5%BA%94%E5%A3%81%E7%BA%B8/" title="发布于 2021-05-29 10:27">必应壁纸</a>
             
         </div>
     </div>
