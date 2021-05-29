@@ -31,11 +31,11 @@ echo 开始添加变更：git add .
 git add .
 echo;
  
-echo 添加提交的commit信息: 更新于 %date:~0,10% %time:~0,5%
-git commit -m "更新于 %date:~0,10% %time:~0,5%"
+echo 添加提交的commit信息: 更新于 %date:~0,13% %time:~0,5%
+git commit -m "更新于 %date:~0,13% %time:~0,5%"
 echo;
  
-echo 将源文件变更提交到远程自己分支：git push origin gh-pages
+echo 将源文件变更提交到远程自己分支：git push origin gh-pages -f
 git push origin gh-pages -f
 echo;
  
