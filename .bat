@@ -36,7 +36,7 @@ git commit -m "更新于 %date:~0,10% %time:~0,5%"
 echo;
  
 echo 将源文件变更提交到远程自己分支：git push origin gh-pages
-git push origin gh-pages
+git push origin gh-pages -f
 echo;
  
 echo 执行完毕！
