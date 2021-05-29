@@ -6,6 +6,11 @@ color 3
 REM 声明采用UTF-8编码
 chcp 65001
 
+
+echo 生成博客静态文件
+call hexo generate
+echo;
+
 echo 当前目录是：%cd%
 echo;
 
