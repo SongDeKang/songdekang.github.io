@@ -31,7 +31,7 @@ WebsiteFavicon: https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/image/w
 ProgressBar:
   id: topProgressBar
   color: "#77B6FF"
-  height: 2px
+  height: 4px
   duration: 0.2
 
 
@@ -190,9 +190,9 @@ BottomText:
   # 图标  
   icon: like-fill
   # 图标左侧文字
-  left: 人生若只如初见
+  left: 此朝花落忽抬眼
   # 图标右侧文字
-  right: 何事秋风悲画扇  
+  right: 吾已待君千百年
 # 是否显示主题信息
 ThemeInfo: true 
 
