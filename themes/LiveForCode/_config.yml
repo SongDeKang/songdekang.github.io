@@ -116,13 +116,15 @@ HomeHeaderImage:
   - https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/image/header/home.jpg
   # - https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/image/header/home.jpeg
 # 主页头图上的标语, 设置此选项会固定显示文字, 默认为空, 自动获取一句
-HomeBannerText: ""
+HomeBannerText: 
+  - "老是想搞一些有关那些精灵与龙的故事！莴苣和马铃薯对你我来说才是比较合适的念头"
 
 
 # ---- 文章详情页配置 ----
 # 文章详情页图片URL, 支持多张, 每次刷新随机设置一张
 ArticleHeaderImage: 
-  - https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/image/header/article.jpg
+  # - https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/image/header/article.jpg
+  - ./bing.jpg
 
 
 # ---- 其他页面配置 ----
