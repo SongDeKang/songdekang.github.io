@@ -32,6 +32,13 @@
             background: rgba(255, 255, 255, 0.3);
             /* box-shadow: 0 2px 6px rgb(0 0 0 / 65%) */
         }
+        .article-prev-next{
+            display: flex;
+            justify-content: space-between;
+        }
+        /* 
+            TODO: 试了下，把短少的正文，使用flex布局，居中。看着还不错的
+        */
     </style>
 
 <meta name="generator" content="Hexo 5.3.0"></head>
@@ -65,14 +72,14 @@
     <div id="container">
     <div id="content">
         <div id="article">
-    <div class="toc"></div>
-    <div class="article-body">
-        <p>之前,就从网上找到一个 python + windows的批处理文件的脚本,每天同步必应壁纸为 windows 桌面。<br>还挺好用的，只是每次下载好的图片，下次执行就设定清除了，我觉得有必要都保存下来，作为以后博客的插图。昨天就看看改了一下, 使用 python 的 <code>datetime.datetime.now().date()</code> 给下载的图片拼接上了日期,也挺有意思。</p>
+  <div class="toc"></div>
+  <div class="article-body">
+    <p>之前,就从网上找到一个 python + windows的批处理文件的脚本,每天同步必应壁纸为 windows 桌面。<br>还挺好用的，只是每次下载好的图片，下次执行就设定清除了，我觉得有必要都保存下来，作为以后博客的插图。昨天就看看改了一下, 使用 python 的 <code>datetime.datetime.now().date()</code> 给下载的图片拼接上了日期,也挺有意思。</p>
 <p>就是可惜，博客我还都不会加图片，那些页面模板的样式也都不会改。ejs 其实之前也用过一下，不过都忘了。</p>
 <p>现在是觉得 hexo 自动部署博客页面，文件全部上传覆盖之前分支太慢了，我看看自己手动上传会不会好一点。现在试验一下。</p>
 
-        <p class="suffix-end">__END__</p>
-        <div class="suffix-box">
+    <p class="suffix-end">__END__</p>
+    <!-- <div class="suffix-box">
             <div class="suffix-box-left">
                 <img src="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/image/sidebar/avatar.jpg" alt="Just For Fun">
             </div>
@@ -89,22 +96,34 @@
                 <br>
             </div>
             <div style="clear: both;"></div>
-        </div>
+        </div> -->
+  </div>
+  <div class="article-footer">
+     
+    <div class="article-prev-next">
+      
+      <span>
+        <a href="/2021/05/29/hexo-%E6%89%8B%E5%8A%A8%E9%83%A8%E7%BD%B2/" class="prev-prefix">« </a> 上一篇：
+        <a
+          href="/2021/05/29/hexo-%E6%89%8B%E5%8A%A8%E9%83%A8%E7%BD%B2/"
+          title="发布于 2021-05-29 10:42"
+          >hexo 手动部署</a
+        >
+      </span>
+      <br />
+       
+      <span>
+        <a href="/2021/05/29/hexo-%E6%89%8B%E5%8A%A8%E9%83%A8%E7%BD%B2/" class="prev-prefix">« </a> 上一篇：
+        <a
+          href="/2021/05/29/hexo-%E6%89%8B%E5%8A%A8%E9%83%A8%E7%BD%B2/"
+          title="发布于 2021-05-29 10:42"
+          >hexo 手动部署</a
+        >
+      </span>
+      
     </div>
-    <div class="article-footer">
-        
-        
-        <div class="article-prev-next">
-            
-                <a href="/2021/05/29/hexo-%E6%89%8B%E5%8A%A8%E9%83%A8%E7%BD%B2/" class="prev-prefix">« </a> 上一篇：    <a href="/2021/05/29/hexo-%E6%89%8B%E5%8A%A8%E9%83%A8%E7%BD%B2/" title="发布于 2021-05-29 10:42">hexo 手动部署</a>
-                <br>
-            
-            
-                <a href="/2021/05/26/%E6%97%A5%E7%9F%A5%E5%BD%95/" class="next-prefix">» </a> 下一篇：    <a href="/2021/05/26/%E6%97%A5%E7%9F%A5%E5%BD%95/" title="发布于 2021-05-26 11:08">日知录</a>
-            
-        </div>
-    </div>
-    
+  </div>
+  <!-- 
     <div class="article-comments">
         <div class="comments-title">
             评论列表
@@ -112,7 +131,8 @@
         <div class="comments-content">
         </div>
     </div>
-
+ -->
+  <!-- html 注释对 ejs 依旧有效啊 -->
 </div>
 
     </div>

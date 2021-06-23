@@ -32,6 +32,13 @@
             background: rgba(255, 255, 255, 0.3);
             /* box-shadow: 0 2px 6px rgb(0 0 0 / 65%) */
         }
+        .article-prev-next{
+            display: flex;
+            justify-content: space-between;
+        }
+        /* 
+            TODO: 试了下，把短少的正文，使用flex布局，居中。看着还不错的
+        */
     </style>
 
 <meta name="generator" content="Hexo 5.3.0"></head>
@@ -65,9 +72,9 @@
     <div id="container">
     <div id="content">
         <div id="article">
-    <div class="toc"></div>
-    <div class="article-body">
-        <h1 id="自在飞花轻似梦"><a href="#自在飞花轻似梦" class="headerlink" title="自在飞花轻似梦"></a>自在飞花轻似梦</h1><ul>
+  <div class="toc"></div>
+  <div class="article-body">
+    <h1 id="自在飞花轻似梦"><a href="#自在飞花轻似梦" class="headerlink" title="自在飞花轻似梦"></a>自在飞花轻似梦</h1><ul>
 <li>无边丝雨细如愁</li>
 <li>宝帘闲挂小银钩</li>
 </ul>
@@ -75,8 +82,8 @@
 <a id="more"></a>
 <p>据说如此,以上为摘要,对啊，为什么没有摘要了</p>
 
-        <p class="suffix-end">__END__</p>
-        <div class="suffix-box">
+    <p class="suffix-end">__END__</p>
+    <!-- <div class="suffix-box">
             <div class="suffix-box-left">
                 <img src="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/image/sidebar/avatar.jpg" alt="Just For Fun">
             </div>
@@ -93,22 +100,34 @@
                 <br>
             </div>
             <div style="clear: both;"></div>
-        </div>
+        </div> -->
+  </div>
+  <div class="article-footer">
+     
+    <div class="article-prev-next">
+      
+      <span>
+        <a href="/2021/05/19/%E5%A6%88%E7%9A%84-%E6%88%91%E5%A5%BD%E7%94%9F%E5%90%8E%E6%82%94/" class="prev-prefix">« </a> 上一篇：
+        <a
+          href="/2021/05/19/%E5%A6%88%E7%9A%84-%E6%88%91%E5%A5%BD%E7%94%9F%E5%90%8E%E6%82%94/"
+          title="发布于 2021-05-19 10:30"
+          >妈的 我好生后悔</a
+        >
+      </span>
+      <br />
+       
+      <span>
+        <a href="/2021/05/19/%E5%A6%88%E7%9A%84-%E6%88%91%E5%A5%BD%E7%94%9F%E5%90%8E%E6%82%94/" class="prev-prefix">« </a> 上一篇：
+        <a
+          href="/2021/05/19/%E5%A6%88%E7%9A%84-%E6%88%91%E5%A5%BD%E7%94%9F%E5%90%8E%E6%82%94/"
+          title="发布于 2021-05-19 10:30"
+          >妈的 我好生后悔</a
+        >
+      </span>
+      
     </div>
-    <div class="article-footer">
-        
-        
-        <div class="article-prev-next">
-            
-                <a href="/2021/05/19/%E5%A6%88%E7%9A%84-%E6%88%91%E5%A5%BD%E7%94%9F%E5%90%8E%E6%82%94/" class="prev-prefix">« </a> 上一篇：    <a href="/2021/05/19/%E5%A6%88%E7%9A%84-%E6%88%91%E5%A5%BD%E7%94%9F%E5%90%8E%E6%82%94/" title="发布于 2021-05-19 10:30">妈的 我好生后悔</a>
-                <br>
-            
-            
-                <a href="/2021/05/17/%E5%88%9D%E5%AD%A6%E8%AE%B0-%E7%BA%B8%E7%AF%93/" class="next-prefix">» </a> 下一篇：    <a href="/2021/05/17/%E5%88%9D%E5%AD%A6%E8%AE%B0-%E7%BA%B8%E7%AF%93/" title="发布于 2021-05-17 11:04">初学记.纸篓</a>
-            
-        </div>
-    </div>
-    
+  </div>
+  <!-- 
     <div class="article-comments">
         <div class="comments-title">
             评论列表
@@ -116,7 +135,8 @@
         <div class="comments-content">
         </div>
     </div>
-
+ -->
+  <!-- html 注释对 ejs 依旧有效啊 -->
 </div>
 
     </div>

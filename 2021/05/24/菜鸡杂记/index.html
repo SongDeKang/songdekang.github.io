@@ -32,6 +32,13 @@
             background: rgba(255, 255, 255, 0.3);
             /* box-shadow: 0 2px 6px rgb(0 0 0 / 65%) */
         }
+        .article-prev-next{
+            display: flex;
+            justify-content: space-between;
+        }
+        /* 
+            TODO: 试了下，把短少的正文，使用flex布局，居中。看着还不错的
+        */
     </style>
 
 <meta name="generator" content="Hexo 5.3.0"></head>
@@ -65,9 +72,9 @@
     <div id="container">
     <div id="content">
         <div id="article">
-    <div class="toc"></div>
-    <div class="article-body">
-        <h3 id="巧立名目"><a href="#巧立名目" class="headerlink" title="巧立名目"></a>巧立名目</h3><pre><code>想要开始写点文章,写点技术博客,备忘且加深印象。
+  <div class="toc"></div>
+  <div class="article-body">
+    <h3 id="巧立名目"><a href="#巧立名目" class="headerlink" title="巧立名目"></a>巧立名目</h3><pre><code>想要开始写点文章,写点技术博客,备忘且加深印象。
 
 那么，首先就是该巧立名目，让自己有想要写下去的欲望，分类也清楚些。
 
@@ -83,8 +90,8 @@
 <p>&lt;% more %&gt;</p>
 <p><code>想不到,缩进也可以是引用块,神奇的markdown</code></p>
 
-        <p class="suffix-end">__END__</p>
-        <div class="suffix-box">
+    <p class="suffix-end">__END__</p>
+    <!-- <div class="suffix-box">
             <div class="suffix-box-left">
                 <img src="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/image/sidebar/avatar.jpg" alt="Just For Fun">
             </div>
@@ -101,22 +108,34 @@
                 <br>
             </div>
             <div style="clear: both;"></div>
-        </div>
+        </div> -->
+  </div>
+  <div class="article-footer">
+     
+    <div class="article-prev-next">
+      
+      <span>
+        <a href="/2021/05/26/%E6%97%A5%E7%9F%A5%E5%BD%95/" class="prev-prefix">« </a> 上一篇：
+        <a
+          href="/2021/05/26/%E6%97%A5%E7%9F%A5%E5%BD%95/"
+          title="发布于 2021-05-26 11:08"
+          >日知录</a
+        >
+      </span>
+      <br />
+       
+      <span>
+        <a href="/2021/05/26/%E6%97%A5%E7%9F%A5%E5%BD%95/" class="prev-prefix">« </a> 上一篇：
+        <a
+          href="/2021/05/26/%E6%97%A5%E7%9F%A5%E5%BD%95/"
+          title="发布于 2021-05-26 11:08"
+          >日知录</a
+        >
+      </span>
+      
     </div>
-    <div class="article-footer">
-        
-        
-        <div class="article-prev-next">
-            
-                <a href="/2021/05/26/%E6%97%A5%E7%9F%A5%E5%BD%95/" class="prev-prefix">« </a> 上一篇：    <a href="/2021/05/26/%E6%97%A5%E7%9F%A5%E5%BD%95/" title="发布于 2021-05-26 11:08">日知录</a>
-                <br>
-            
-            
-                <a href="/2021/05/23/%E6%88%90%E5%8A%9F%E4%BA%86%EF%BC%8C%E4%BD%86%E4%B8%8D%E6%98%AF%E5%BE%88%E6%88%90%E5%8A%9F/" class="next-prefix">» </a> 下一篇：    <a href="/2021/05/23/%E6%88%90%E5%8A%9F%E4%BA%86%EF%BC%8C%E4%BD%86%E4%B8%8D%E6%98%AF%E5%BE%88%E6%88%90%E5%8A%9F/" title="发布于 2021-05-23 08:26">成功了，但不是很成功</a>
-            
-        </div>
-    </div>
-    
+  </div>
+  <!-- 
     <div class="article-comments">
         <div class="comments-title">
             评论列表
@@ -124,7 +143,8 @@
         <div class="comments-content">
         </div>
     </div>
-
+ -->
+  <!-- html 注释对 ejs 依旧有效啊 -->
 </div>
 
     </div>

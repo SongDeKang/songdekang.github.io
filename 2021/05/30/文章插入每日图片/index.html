@@ -32,6 +32,13 @@
             background: rgba(255, 255, 255, 0.3);
             /* box-shadow: 0 2px 6px rgb(0 0 0 / 65%) */
         }
+        .article-prev-next{
+            display: flex;
+            justify-content: space-between;
+        }
+        /* 
+            TODO: 试了下，把短少的正文，使用flex布局，居中。看着还不错的
+        */
     </style>
 
 <meta name="generator" content="Hexo 5.3.0"></head>
@@ -65,12 +72,12 @@
     <div id="container">
     <div id="content">
         <div id="article">
-    <div class="toc"></div>
-    <div class="article-body">
-        <p>且不说,将图片引入使用,光是用 python 下载到指定的文件夹,就难住我了,告辞!</p>
+  <div class="toc"></div>
+  <div class="article-body">
+    <p>且不说,将图片引入使用,光是用 python 下载到指定的文件夹,就难住我了,告辞!</p>
 
-        <p class="suffix-end">__END__</p>
-        <div class="suffix-box">
+    <p class="suffix-end">__END__</p>
+    <!-- <div class="suffix-box">
             <div class="suffix-box-left">
                 <img src="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/image/sidebar/avatar.jpg" alt="Just For Fun">
             </div>
@@ -87,29 +94,40 @@
                 <br>
             </div>
             <div style="clear: both;"></div>
-        </div>
-    </div>
-    <div class="article-footer">
-        
-        
-            <div class="tag">
-                标签：
-                
-                    <a href="/tags/test/">test</a>
-                
-            </div>
-        
-        <div class="article-prev-next">
-            
-                <a href="/2021/06/10/%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E7%BA%AA%E5%BF%B5/" class="prev-prefix">« </a> 上一篇：    <a href="/2021/06/10/%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E7%BA%AA%E5%BF%B5/" title="发布于 2021-06-10 12:01">为了忘却的纪念</a>
-                <br>
-            
-            
-                <a href="/2021/05/29/hexo-%E6%89%8B%E5%8A%A8%E9%83%A8%E7%BD%B2/" class="next-prefix">» </a> 下一篇：    <a href="/2021/05/29/hexo-%E6%89%8B%E5%8A%A8%E9%83%A8%E7%BD%B2/" title="发布于 2021-05-29 10:42">hexo 手动部署</a>
-            
-        </div>
+        </div> -->
+  </div>
+  <div class="article-footer">
+     
+    <div class="tag">
+      标签： 
+      <a href="/tags/test/">test</a>
+      
     </div>
     
+    <div class="article-prev-next">
+      
+      <span>
+        <a href="/2021/06/10/%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E7%BA%AA%E5%BF%B5/" class="prev-prefix">« </a> 上一篇：
+        <a
+          href="/2021/06/10/%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E7%BA%AA%E5%BF%B5/"
+          title="发布于 2021-06-10 12:01"
+          >为了忘却的纪念</a
+        >
+      </span>
+      <br />
+       
+      <span>
+        <a href="/2021/06/10/%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E7%BA%AA%E5%BF%B5/" class="prev-prefix">« </a> 上一篇：
+        <a
+          href="/2021/06/10/%E4%B8%BA%E4%BA%86%E5%BF%98%E5%8D%B4%E7%9A%84%E7%BA%AA%E5%BF%B5/"
+          title="发布于 2021-06-10 12:01"
+          >为了忘却的纪念</a
+        >
+      </span>
+      
+    </div>
+  </div>
+  <!-- 
     <div class="article-comments">
         <div class="comments-title">
             评论列表
@@ -117,7 +135,8 @@
         <div class="comments-content">
         </div>
     </div>
-
+ -->
+  <!-- html 注释对 ejs 依旧有效啊 -->
 </div>
 
     </div>

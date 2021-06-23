@@ -32,6 +32,13 @@
             background: rgba(255, 255, 255, 0.3);
             /* box-shadow: 0 2px 6px rgb(0 0 0 / 65%) */
         }
+        .article-prev-next{
+            display: flex;
+            justify-content: space-between;
+        }
+        /* 
+            TODO: 试了下，把短少的正文，使用flex布局，居中。看着还不错的
+        */
     </style>
 
 <meta name="generator" content="Hexo 5.3.0"></head>
@@ -65,14 +72,14 @@
     <div id="container">
     <div id="content">
         <div id="article">
-    <div class="toc"></div>
-    <div class="article-body">
-        <p>近来,工作日熟,略有闲暇,可为无益有趣之事(未为无益,戏言之耳)</p>
+  <div class="toc"></div>
+  <div class="article-body">
+    <p>近来,工作日熟,略有闲暇,可为无益有趣之事(未为无益,戏言之耳)</p>
 <p>字体略小</p>
 <p><strong>* 已忘之矣 *</strong></p>
 
-        <p class="suffix-end">__END__</p>
-        <div class="suffix-box">
+    <p class="suffix-end">__END__</p>
+    <!-- <div class="suffix-box">
             <div class="suffix-box-left">
                 <img src="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/image/sidebar/avatar.jpg" alt="Just For Fun">
             </div>
@@ -89,20 +96,25 @@
                 <br>
             </div>
             <div style="clear: both;"></div>
-        </div>
+        </div> -->
+  </div>
+  <div class="article-footer">
+     
+    <div class="article-prev-next">
+      
+      <span>
+        <a href="/2021/05/18/%E8%87%AA%E5%9C%A8%E9%A3%9E%E8%8A%B1%E8%BD%BB%E4%BC%BC%E6%A2%A6/" class="prev-prefix">« </a> 上一篇：
+        <a
+          href="/2021/05/18/%E8%87%AA%E5%9C%A8%E9%A3%9E%E8%8A%B1%E8%BD%BB%E4%BC%BC%E6%A2%A6/"
+          title="发布于 2021-05-18 09:04"
+          >自在飞花轻似梦</a
+        >
+      </span>
+      <br />
+       
     </div>
-    <div class="article-footer">
-        
-        
-        <div class="article-prev-next">
-            
-                <a href="/2021/05/18/%E8%87%AA%E5%9C%A8%E9%A3%9E%E8%8A%B1%E8%BD%BB%E4%BC%BC%E6%A2%A6/" class="prev-prefix">« </a> 上一篇：    <a href="/2021/05/18/%E8%87%AA%E5%9C%A8%E9%A3%9E%E8%8A%B1%E8%BD%BB%E4%BC%BC%E6%A2%A6/" title="发布于 2021-05-18 09:04">自在飞花轻似梦</a>
-                <br>
-            
-            
-        </div>
-    </div>
-    
+  </div>
+  <!-- 
     <div class="article-comments">
         <div class="comments-title">
             评论列表
@@ -110,7 +122,8 @@
         <div class="comments-content">
         </div>
     </div>
-
+ -->
+  <!-- html 注释对 ejs 依旧有效啊 -->
 </div>
 
     </div>

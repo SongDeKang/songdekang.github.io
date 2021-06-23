@@ -32,6 +32,13 @@
             background: rgba(255, 255, 255, 0.3);
             /* box-shadow: 0 2px 6px rgb(0 0 0 / 65%) */
         }
+        .article-prev-next{
+            display: flex;
+            justify-content: space-between;
+        }
+        /* 
+            TODO: 试了下，把短少的正文，使用flex布局，居中。看着还不错的
+        */
     </style>
 
 <meta name="generator" content="Hexo 5.3.0"></head>
@@ -65,14 +72,14 @@
     <div id="container">
     <div id="content">
         <div id="article">
-    <div class="toc"></div>
-    <div class="article-body">
-        <p>累死累活，费了九牛二虎吃奶的劲，终于把这个用 hexo + travis + github pages 的个人博客部署上去了。</p>
+  <div class="toc"></div>
+  <div class="article-body">
+    <p>累死累活，费了九牛二虎吃奶的劲，终于把这个用 hexo + travis + github pages 的个人博客部署上去了。</p>
 <p>谁料，处理完两处 travis 的报错，本以为终于成功了，却发现github pages页面找不到，travis 自动生成的文件，仿佛也都是空的。</p>
 <p>简直莫名其妙。</p>
 
-        <p class="suffix-end">__END__</p>
-        <div class="suffix-box">
+    <p class="suffix-end">__END__</p>
+    <!-- <div class="suffix-box">
             <div class="suffix-box-left">
                 <img src="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/image/sidebar/avatar.jpg" alt="Just For Fun">
             </div>
@@ -89,22 +96,34 @@
                 <br>
             </div>
             <div style="clear: both;"></div>
-        </div>
+        </div> -->
+  </div>
+  <div class="article-footer">
+     
+    <div class="article-prev-next">
+      
+      <span>
+        <a href="/2021/05/24/%E8%8F%9C%E9%B8%A1%E6%9D%82%E8%AE%B0/" class="prev-prefix">« </a> 上一篇：
+        <a
+          href="/2021/05/24/%E8%8F%9C%E9%B8%A1%E6%9D%82%E8%AE%B0/"
+          title="发布于 2021-05-24 10:48"
+          >菜鸡杂记</a
+        >
+      </span>
+      <br />
+       
+      <span>
+        <a href="/2021/05/24/%E8%8F%9C%E9%B8%A1%E6%9D%82%E8%AE%B0/" class="prev-prefix">« </a> 上一篇：
+        <a
+          href="/2021/05/24/%E8%8F%9C%E9%B8%A1%E6%9D%82%E8%AE%B0/"
+          title="发布于 2021-05-24 10:48"
+          >菜鸡杂记</a
+        >
+      </span>
+      
     </div>
-    <div class="article-footer">
-        
-        
-        <div class="article-prev-next">
-            
-                <a href="/2021/05/24/%E8%8F%9C%E9%B8%A1%E6%9D%82%E8%AE%B0/" class="prev-prefix">« </a> 上一篇：    <a href="/2021/05/24/%E8%8F%9C%E9%B8%A1%E6%9D%82%E8%AE%B0/" title="发布于 2021-05-24 10:48">菜鸡杂记</a>
-                <br>
-            
-            
-                <a href="/2021/05/19/%E5%A6%88%E7%9A%84-%E6%88%91%E5%A5%BD%E7%94%9F%E5%90%8E%E6%82%94/" class="next-prefix">» </a> 下一篇：    <a href="/2021/05/19/%E5%A6%88%E7%9A%84-%E6%88%91%E5%A5%BD%E7%94%9F%E5%90%8E%E6%82%94/" title="发布于 2021-05-19 10:30">妈的 我好生后悔</a>
-            
-        </div>
-    </div>
-    
+  </div>
+  <!-- 
     <div class="article-comments">
         <div class="comments-title">
             评论列表
@@ -112,7 +131,8 @@
         <div class="comments-content">
         </div>
     </div>
-
+ -->
+  <!-- html 注释对 ejs 依旧有效啊 -->
 </div>
 
     </div>

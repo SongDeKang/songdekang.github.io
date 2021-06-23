@@ -32,6 +32,13 @@
             background: rgba(255, 255, 255, 0.3);
             /* box-shadow: 0 2px 6px rgb(0 0 0 / 65%) */
         }
+        .article-prev-next{
+            display: flex;
+            justify-content: space-between;
+        }
+        /* 
+            TODO: 试了下，把短少的正文，使用flex布局，居中。看着还不错的
+        */
     </style>
 
 <meta name="generator" content="Hexo 5.3.0"></head>
@@ -65,9 +72,9 @@
     <div id="container">
     <div id="content">
         <div id="article">
-    <div class="toc"></div>
-    <div class="article-body">
-        <p>  随便起个名字,就是想着,不可间断啊.</p>
+  <div class="toc"></div>
+  <div class="article-body">
+    <p>  随便起个名字,就是想着,不可间断啊.</p>
 <p>  这才几天,我之前配的 .bat 批处理文件就已经忘了.</p>
 <p>  还有复利最大的敌人就是间断么,一日的损失,需要好多天的累计.</p>
 <p>  还记得,曾国藩说的什么……</p>
@@ -76,8 +83,8 @@
 <p>  就是没什么可记的,我也要打几个字,提到 github 上</p>
 <p>  就这么定了</p>
 
-        <p class="suffix-end">__END__</p>
-        <div class="suffix-box">
+    <p class="suffix-end">__END__</p>
+    <!-- <div class="suffix-box">
             <div class="suffix-box-left">
                 <img src="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/image/sidebar/avatar.jpg" alt="Just For Fun">
             </div>
@@ -94,22 +101,34 @@
                 <br>
             </div>
             <div style="clear: both;"></div>
-        </div>
+        </div> -->
+  </div>
+  <div class="article-footer">
+     
+    <div class="article-prev-next">
+      
+      <span>
+        <a href="/2021/06/10/%E6%AF%8B%E6%AC%B2%E9%80%9F/" class="prev-prefix">« </a> 上一篇：
+        <a
+          href="/2021/06/10/%E6%AF%8B%E6%AC%B2%E9%80%9F/"
+          title="发布于 2021-06-10 10:57"
+          >毋欲速</a
+        >
+      </span>
+      <br />
+       
+      <span>
+        <a href="/2021/06/10/%E6%AF%8B%E6%AC%B2%E9%80%9F/" class="prev-prefix">« </a> 上一篇：
+        <a
+          href="/2021/06/10/%E6%AF%8B%E6%AC%B2%E9%80%9F/"
+          title="发布于 2021-06-10 10:57"
+          >毋欲速</a
+        >
+      </span>
+      
     </div>
-    <div class="article-footer">
-        
-        
-        <div class="article-prev-next">
-            
-                <a href="/2021/06/10/%E6%AF%8B%E6%AC%B2%E9%80%9F/" class="prev-prefix">« </a> 上一篇：    <a href="/2021/06/10/%E6%AF%8B%E6%AC%B2%E9%80%9F/" title="发布于 2021-06-10 10:57">毋欲速</a>
-                <br>
-            
-            
-                <a href="/2021/05/30/%E6%96%87%E7%AB%A0%E6%8F%92%E5%85%A5%E6%AF%8F%E6%97%A5%E5%9B%BE%E7%89%87/" class="next-prefix">» </a> 下一篇：    <a href="/2021/05/30/%E6%96%87%E7%AB%A0%E6%8F%92%E5%85%A5%E6%AF%8F%E6%97%A5%E5%9B%BE%E7%89%87/" title="发布于 2021-05-30 09:33">文章插入每日图片</a>
-            
-        </div>
-    </div>
-    
+  </div>
+  <!-- 
     <div class="article-comments">
         <div class="comments-title">
             评论列表
@@ -117,7 +136,8 @@
         <div class="comments-content">
         </div>
     </div>
-
+ -->
+  <!-- html 注释对 ejs 依旧有效啊 -->
 </div>
 
     </div>

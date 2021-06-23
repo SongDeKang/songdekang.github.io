@@ -32,6 +32,13 @@
             background: rgba(255, 255, 255, 0.3);
             /* box-shadow: 0 2px 6px rgb(0 0 0 / 65%) */
         }
+        .article-prev-next{
+            display: flex;
+            justify-content: space-between;
+        }
+        /* 
+            TODO: 试了下，把短少的正文，使用flex布局，居中。看着还不错的
+        */
     </style>
 
 <meta name="generator" content="Hexo 5.3.0"></head>
@@ -65,17 +72,17 @@
     <div id="container">
     <div id="content">
         <div id="article">
-    <div class="toc"></div>
-    <div class="article-body">
-        <h2 id="博客页面分支手动提交"><a href="#博客页面分支手动提交" class="headerlink" title="博客页面分支手动提交"></a>博客页面分支手动提交</h2><p>果然，要比 <code>hexo-deployer-git</code> 部署提交新文件全覆盖旧文件快的多。</p>
+  <div class="toc"></div>
+  <div class="article-body">
+    <h2 id="博客页面分支手动提交"><a href="#博客页面分支手动提交" class="headerlink" title="博客页面分支手动提交"></a>博客页面分支手动提交</h2><p>果然，要比 <code>hexo-deployer-git</code> 部署提交新文件全覆盖旧文件快的多。</p>
 <p>那么问题就来了：</p>
 <h3 id="该怎么实现-git-自动提交"><a href="#该怎么实现-git-自动提交" class="headerlink" title="该怎么实现 git 自动提交"></a>该怎么实现 git 自动提交</h3><blockquote>
 <p>不知道有没有可以用的脚本<br>最好还可以带上提交时间  </p>
 </blockquote>
 <p>plus: 现在这把宁芝键盘让我对它的摩擦音有点受不了</p>
 <h2 id="自动提交批处理文件代码"><a href="#自动提交批处理文件代码" class="headerlink" title="自动提交批处理文件代码"></a>自动提交批处理文件代码</h2><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"> </span><br><span class="line"><span class="built_in">title</span> GIT一键提交</span><br><span class="line"><span class="built_in">color</span> <span class="number">3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">REM 声明采用UTF-8编码</span></span><br><span class="line"><span class="built_in">chcp</span> <span class="number">65001</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> 生成博客静态文件</span><br><span class="line"><span class="keyword">call</span> hexo generate</span><br><span class="line"><span class="built_in">echo</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> 当前目录是：<span class="variable">%cd%</span></span><br><span class="line"><span class="built_in">echo</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> 开始添加变更：git add .</span><br><span class="line">git add .</span><br><span class="line"><span class="built_in">echo</span>;</span><br><span class="line"> </span><br><span class="line"><span class="built_in">set</span> /p declation=输入提交的commit信息:</span><br><span class="line">git commit -m &quot;<span class="variable">%declation%</span>&quot;</span><br><span class="line"><span class="built_in">echo</span>;</span><br><span class="line"> </span><br><span class="line"><span class="built_in">echo</span> 将源文件变更提交到远程自己分支：git push origin master</span><br><span class="line">git push origin master</span><br><span class="line"><span class="built_in">echo</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> 提交博客静态文件</span><br><span class="line"><span class="built_in">cd</span> public</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> 当前目录是：<span class="variable">%cd%</span></span><br><span class="line"><span class="built_in">echo</span>;</span><br><span class="line"> </span><br><span class="line"><span class="built_in">echo</span> 开始添加变更：git add .</span><br><span class="line">git add .</span><br><span class="line"><span class="built_in">echo</span>;</span><br><span class="line"> </span><br><span class="line"><span class="built_in">echo</span> 添加提交的commit信息: 更新于 <span class="variable">%date:~0,13%</span> <span class="variable">%time:~0,5%</span></span><br><span class="line">git commit -m &quot;更新于 <span class="variable">%date:~0,13%</span> <span class="variable">%time:~0,5%</span>&quot;</span><br><span class="line"><span class="built_in">echo</span>;</span><br><span class="line"> </span><br><span class="line"><span class="built_in">echo</span> 将源文件变更提交到自己远程分支：git push origin gh-pages -f</span><br><span class="line">git push origin gh-pages -f</span><br><span class="line"><span class="built_in">echo</span>;</span><br><span class="line"> </span><br><span class="line"><span class="built_in">echo</span> 执行完毕！</span><br><span class="line"><span class="built_in">echo</span>;</span><br><span class="line"> </span><br><span class="line"><span class="built_in">pause</span></span><br></pre></td></tr></table></figure>
-        <p class="suffix-end">__END__</p>
-        <div class="suffix-box">
+    <p class="suffix-end">__END__</p>
+    <!-- <div class="suffix-box">
             <div class="suffix-box-left">
                 <img src="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/image/sidebar/avatar.jpg" alt="Just For Fun">
             </div>
@@ -92,22 +99,34 @@
                 <br>
             </div>
             <div style="clear: both;"></div>
-        </div>
+        </div> -->
+  </div>
+  <div class="article-footer">
+     
+    <div class="article-prev-next">
+      
+      <span>
+        <a href="/2021/05/30/%E6%96%87%E7%AB%A0%E6%8F%92%E5%85%A5%E6%AF%8F%E6%97%A5%E5%9B%BE%E7%89%87/" class="prev-prefix">« </a> 上一篇：
+        <a
+          href="/2021/05/30/%E6%96%87%E7%AB%A0%E6%8F%92%E5%85%A5%E6%AF%8F%E6%97%A5%E5%9B%BE%E7%89%87/"
+          title="发布于 2021-05-30 09:33"
+          >文章插入每日图片</a
+        >
+      </span>
+      <br />
+       
+      <span>
+        <a href="/2021/05/30/%E6%96%87%E7%AB%A0%E6%8F%92%E5%85%A5%E6%AF%8F%E6%97%A5%E5%9B%BE%E7%89%87/" class="prev-prefix">« </a> 上一篇：
+        <a
+          href="/2021/05/30/%E6%96%87%E7%AB%A0%E6%8F%92%E5%85%A5%E6%AF%8F%E6%97%A5%E5%9B%BE%E7%89%87/"
+          title="发布于 2021-05-30 09:33"
+          >文章插入每日图片</a
+        >
+      </span>
+      
     </div>
-    <div class="article-footer">
-        
-        
-        <div class="article-prev-next">
-            
-                <a href="/2021/05/30/%E6%96%87%E7%AB%A0%E6%8F%92%E5%85%A5%E6%AF%8F%E6%97%A5%E5%9B%BE%E7%89%87/" class="prev-prefix">« </a> 上一篇：    <a href="/2021/05/30/%E6%96%87%E7%AB%A0%E6%8F%92%E5%85%A5%E6%AF%8F%E6%97%A5%E5%9B%BE%E7%89%87/" title="发布于 2021-05-30 09:33">文章插入每日图片</a>
-                <br>
-            
-            
-                <a href="/2021/05/29/%E5%BF%85%E5%BA%94%E5%A3%81%E7%BA%B8/" class="next-prefix">» </a> 下一篇：    <a href="/2021/05/29/%E5%BF%85%E5%BA%94%E5%A3%81%E7%BA%B8/" title="发布于 2021-05-29 10:27">必应壁纸</a>
-            
-        </div>
-    </div>
-    
+  </div>
+  <!-- 
     <div class="article-comments">
         <div class="comments-title">
             评论列表
@@ -115,7 +134,8 @@
         <div class="comments-content">
         </div>
     </div>
-
+ -->
+  <!-- html 注释对 ejs 依旧有效啊 -->
 </div>
 
     </div>
