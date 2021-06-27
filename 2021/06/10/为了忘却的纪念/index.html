@@ -36,6 +36,14 @@
             display: flex;
             justify-content: space-between;
         }
+        h1, h2, h3, h4, h5, h6 {
+            padding: 0;
+            text-align:center
+        }
+        .article-body p {
+            text-indent:2em;
+            font-size: 16px;
+        }
         /* 
             TODO: 试了下，把短少的正文，使用flex布局，居中。看着还不错的
         */
@@ -69,7 +77,7 @@
         <canvas id="articleHeaderCanvas"></canvas>
     </div>
 </div>
-    <div id="container">
+    <div id="container" style="max-width: 740px !important">
     <div id="content">
         <div id="article">
   <div class="toc"></div>
@@ -118,12 +126,13 @@
       <br />
        
       <span>
-        <a href="/2021/06/10/%E6%AF%8B%E6%AC%B2%E9%80%9F/" class="prev-prefix">« </a> 上一篇：
+        下一篇：
         <a
-          href="/2021/06/10/%E6%AF%8B%E6%AC%B2%E9%80%9F/"
-          title="发布于 2021-06-10 10:57"
-          >毋欲速</a
+          href="/2021/05/30/%E6%96%87%E7%AB%A0%E6%8F%92%E5%85%A5%E6%AF%8F%E6%97%A5%E5%9B%BE%E7%89%87/"
+          title="发布于 2021-05-30 09:33"
+          >文章插入每日图片</a
         >
+        <a href="/2021/05/30/%E6%96%87%E7%AB%A0%E6%8F%92%E5%85%A5%E6%AF%8F%E6%97%A5%E5%9B%BE%E7%89%87/" class="next-prefix">» </a>
       </span>
       
     </div>
@@ -138,6 +147,7 @@
     </div>
  -->
   <!-- html 注释对 ejs 依旧有效啊 -->
+  <!-- 只是标签颜色还是看不太出来 -->
 </div>
 
     </div>
@@ -318,6 +328,8 @@
         HomeBannerText  : '他们说你有妄想，说你眼中闪着你生命的光，他们说你所有的梦想都会成真',
 
         ArticleHeaderImage : [
+            
+                'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/image/header/article.jpg',
             
                 './bing.jpg',
             

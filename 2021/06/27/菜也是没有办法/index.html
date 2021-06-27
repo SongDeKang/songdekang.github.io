@@ -6,7 +6,7 @@
     <meta name="referrer" content="origin">
     <meta http-equiv="Cache-Control" content="no-transform">
     <meta http-equiv="Cache-Control" content="no-siteapp">
-    <title>只为看壁纸</title>
+    <title>菜也是没有办法</title>
 
     <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/LongCang.css">
     <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/Monda.css">
@@ -56,19 +56,19 @@
     <div class="header">
         <div class="vertical">
             <div class="inner">
-                <h1 class="header-subtitle">只为看壁纸</h1>
+                <h1 class="header-subtitle">菜也是没有办法</h1>
                 <div class="header-subinfo">
                     <p class="article-info-text">
                         <span>
-                            <i class="iconfont icon-time"></i> 发表时间：2021-06-15
+                            <i class="iconfont icon-time"></i> 发表时间：2021-06-27
                         </span>
                         
-                            <span id="/2021/06/15/只为看壁纸/" class="leancloud_visitors" data-flag-title="只为看壁纸">
+                            <span id="/2021/06/27/菜也是没有办法/" class="leancloud_visitors" data-flag-title="菜也是没有办法">
                                 <i class="iconfont icon-browse"></i> 阅读：<sapn class="leancloud-visitors-count"></span>
                             </span>
                         
                         <span>
-                            <i class="iconfont icon-interactive"></i> 评论：<span class="valine-comment-count" data-xid="/2021/06/15/只为看壁纸/"></span>
+                            <i class="iconfont icon-interactive"></i> 评论：<span class="valine-comment-count" data-xid="/2021/06/27/菜也是没有办法/"></span>
                         </span>  
                     </p>                 
                 </div>
@@ -82,13 +82,18 @@
         <div id="article">
   <div class="toc"></div>
   <div class="article-body">
-    <p>  没有其他的意思,就是想看一下,今天的壁纸放在页头什么样子。</p>
-<p>  一直是想着记点什么新知识，但是也没精力，也懒得不行。</p>
-<p>  今天唯一有点意思，确切说是这么多天唯一有点意思的是：</p>
-<p>  微博上跟人家辩论爱因斯坦的泛神论，到底是不是客客气气的无神论，</p>
-<p>  当然这个主要是我提出的，我之前记得看钱老说斯宾诺莎有这么一句</p>
-<p>  觉得是一句妙语，而且还觉得这话也很有钱老的风格</p>
-<p>  今天谈到，查了才知道这话竟然是叔本华说的</p>
+    <h1 id="SOME-PROBLEMS"><a href="#SOME-PROBLEMS" class="headerlink" title="SOME PROBLEMS"></a>SOME PROBLEMS</h1><p>本来以为问题越来越多 像:</p>
+<ol>
+<li>上次页面加载不出来,不知道是 hexo 哪报错出问题</li>
+<li>首页题词配置的 yaml 数组说是随机选一句,但其实都显示出来了</li>
+</ol>
+<p><em>不过第一个问题,可能我刚删除了一个空页面文件夹,就意外的解决掉了</em></p>
+<h1 id="道阻且长-行则将至"><a href="#道阻且长-行则将至" class="headerlink" title="道阻且长,行则将至"></a>道阻且长,行则将至</h1><p>忘记了是在哪看到的一句话</p>
+<h1 id="随机题词"><a href="#随机题词" class="headerlink" title="随机题词"></a>随机题词</h1><p>这就是上面的第二个问题,我终于是给解决了。真的是百般想办法，发现是引入的 js 没有写随机固定文本的，先想着自己写一个js，把那段代码覆盖掉，没想到加上 onload 和 setTimeout 之后，还有可能是我的代码先执行，导致被覆盖掉，还是无法随机。</p>
+<p>又想着从配置文件那的 ejs 模板返回一个随机的，但是 ejs 语法啊定义函数啊都不太会用，就想着在上面定义函数，在模板里面调用，也获取不到，后来又想到直接一行 <code>&lt;%= %&gt;</code> 里面直接自执行随机函数指定索引从配置数组中取值。</p>
+<p>竟然可以了</p>
+<p><strong>不过还是觉得 ejs 模板语法挺操蛋的</strong></p>
+<p>今天就到此为止吧，我已经在这上面花了太多时间</p>
 
     <p class="suffix-end">__END__</p>
     <!-- <div class="suffix-box">
@@ -98,7 +103,7 @@
             <div class="suffix-box-right">
                 <span class="suffix-box-title">文章作者</span>：Just For Fun
                 <br>
-                <span class="suffix-box-title">文章出处</span>：<a href="/2021/06/15/%E5%8F%AA%E4%B8%BA%E7%9C%8B%E5%A3%81%E7%BA%B8/" target="_blank">只为看壁纸</a>
+                <span class="suffix-box-title">文章出处</span>：<a href="/2021/06/27/%E8%8F%9C%E4%B9%9F%E6%98%AF%E6%B2%A1%E6%9C%89%E5%8A%9E%E6%B3%95/" target="_blank">菜也是没有办法</a>
                 <br>
                 <span class="suffix-box-title">作者签名</span>：简单地活着, 肆意又精彩.
                 <br>
@@ -113,25 +118,15 @@
   <div class="article-footer">
      
     <div class="article-prev-next">
-      
-      <span>
-        <a href="/2021/06/19/%E6%87%B5%E9%80%BC%E6%A0%91%E4%B8%8A%E6%87%B5%E9%80%BC%E6%9E%9C/" class="prev-prefix">« </a> 上一篇：
-        <a
-          href="/2021/06/19/%E6%87%B5%E9%80%BC%E6%A0%91%E4%B8%8A%E6%87%B5%E9%80%BC%E6%9E%9C/"
-          title="发布于 2021-06-19 12:45"
-          >懵逼树上懵逼果</a
-        >
-      </span>
-      <br />
        
       <span>
         下一篇：
         <a
-          href="/2021/06/11/%E5%A4%8D%E6%9D%82%E5%BA%A6/"
-          title="发布于 2021-06-11 10:52"
-          >复杂度</a
+          href="/2021/06/24/one-day/"
+          title="发布于 2021-06-24 11:44"
+          >one day</a
         >
-        <a href="/2021/06/11/%E5%A4%8D%E6%9D%82%E5%BA%A6/" class="next-prefix">» </a>
+        <a href="/2021/06/24/one-day/" class="next-prefix">» </a>
       </span>
       
     </div>
@@ -324,7 +319,7 @@
                 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/image/header/home.jpg',
             
         ],
-        HomeBannerText  : '犹记少时拿云志 曾许人见第一流',
+        HomeBannerText  : '老是想搞一些有关那些精灵与龙的故事！莴苣和马铃薯对你我来说才是比较合适的念头',
 
         ArticleHeaderImage : [
             
