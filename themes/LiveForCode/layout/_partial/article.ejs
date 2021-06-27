@@ -50,17 +50,18 @@
       <br />
       <% } %> <% if (post.next) { %>
       <span>
-        <a href="<%- url_for(post.prev.path) %>" class="prev-prefix">« </a> <%=
-        __('post.prev') %>
+        <%= __('post.next') %>
         <a
-          href="<%- url_for(post.prev.path) %>"
-          title="<%= __('post.post') %> <%- date(post.prev.date, 'YYYY-MM-DD hh:mm') %>"
-          ><%- post.prev.title %></a
+          href="<%- url_for(post.next.path) %>"
+          title="<%= __('post.post') %> <%- date(post.next.date, 'YYYY-MM-DD hh:mm') %>"
+          ><%- post.next.title %></a
         >
+        <a href="<%- url_for(post.next.path) %>" class="next-prefix">» </a>
       </span>
       <% } %>
     </div>
   </div>
   <!-- <%- partial('_partial/comment') %> -->
   <!-- html 注释对 ejs 依旧有效啊 -->
+  <!-- 只是标签颜色还是看不太出来 -->
 </div>

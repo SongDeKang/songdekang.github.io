@@ -92,7 +92,7 @@
                 '<%= homeHeaderImage %>',
             <% }) %>
         ],
-        HomeBannerText  : '<%= theme.HomeBannerText %>',
+        HomeBannerText  : '<%= theme.HomeBannerText[(function(min,max){return Math.floor(Math.random() * (max- min) + min)})(0,theme.HomeBannerText.length)]%>',
 
         ArticleHeaderImage : [
             <% theme.ArticleHeaderImage.forEach(function(articleHeaderImage){ %>
