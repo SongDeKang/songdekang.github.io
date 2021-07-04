@@ -340,3 +340,30 @@ renderSquare(i){
   <!-- 我还以为子组件里面点击事件都不需要了 -->
   <!-- 还是 too young 啊 -->
 - 删除 Square 组件中的构造函数 constructor ，该组件不需要再保存游戏的 state
+
+进行上述修改之后，代码会变成下面这样：
+
+```js
+class Square extends React.Component{
+  render(){
+    return (
+      <button 
+        className="Square"
+        onClick={()=>this.props.onClick()}
+      >
+        {this.props.value}
+      </button>
+    )
+  }
+}
+```
+
+每一个 Square 被点击时，Board 提供的 onClick 函数就会触发。我们回顾一下这是怎么实现的：
+
+1. 向 DOM 元素 button **添加 onClick prop ，让 React 开启对点击事件的监听。**
+2. 当 button 被点击时， React 会调用 Square 组件的 render() 方法中 onClick 事件处理函数
+3. 事件处理函数触发了传入其中的 `this.props.onClick()` 方法。这个方法是由 Board 组件传递给 Square 的。
+4. 由于 Board 把 `onClick={()=>this.handleClick(i)}` 传递给了 Square ，所以当 Square 中的事件处理函数触发时，其实就是出发的 Board 当中的 this.handleClick(i) 方法。
+5. 我们还未定义 handleClick 方法，所以代码还不能正常工作。如果此时点击 Square ，你会在屏幕上看到红色的错误提示，提示内容为： " this.handleClick is not a function "。
+  
+**`注意：因为 DOM 元素 <button/> 是一个内置组件[ 哦哦懂了，我一直以为该说时html元素的，原来这是指 react 内置组件啊 ]`**
