@@ -6,7 +6,7 @@
     <meta name="referrer" content="origin">
     <meta http-equiv="Cache-Control" content="no-transform">
     <meta http-equiv="Cache-Control" content="no-siteapp">
-    <title>state 不知道哪改了</title>
+    <title>vim.easymotion</title>
 
     <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/LongCang.css">
     <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/Monda.css">
@@ -56,19 +56,19 @@
     <div class="header">
         <div class="vertical">
             <div class="inner">
-                <h1 class="header-subtitle">state 不知道哪改了</h1>
+                <h1 class="header-subtitle">vim.easymotion</h1>
                 <div class="header-subinfo">
                     <p class="article-info-text">
                         <span>
                             <i class="iconfont icon-time"></i> 发表时间：2021-07-04
                         </span>
                         
-                            <span id="/2021/07/04/不知道哪改了/" class="leancloud_visitors" data-flag-title="state 不知道哪改了">
+                            <span id="/2021/07/04/vim-easymotion/" class="leancloud_visitors" data-flag-title="vim.easymotion">
                                 <i class="iconfont icon-browse"></i> 阅读：<sapn class="leancloud-visitors-count"></span>
                             </span>
                         
                         <span>
-                            <i class="iconfont icon-interactive"></i> 评论：<span class="valine-comment-count" data-xid="/2021/07/04/不知道哪改了/"></span>
+                            <i class="iconfont icon-interactive"></i> 评论：<span class="valine-comment-count" data-xid="/2021/07/04/vim-easymotion/"></span>
                         </span>  
                     </p>                 
                 </div>
@@ -82,19 +82,12 @@
         <div id="article">
   <div class="toc"></div>
   <div class="article-body">
-    <p>踩了个坑</p>
-<p>没见 setState 之类的,但是 state 就是被改了</p>
-<p>找了好长时间都没发现是怎么回事</p>
-<p>最后打了一堆断点发现</p>
-<p>是该 state 作为实参传入了父组件传来的函数中</p>
-<p>而父组件的函数操作了这个参数state对象</p>
-<p>应该是浅拷贝的问题</p>
-<p>坑死我了</p>
-<p>SO 以后注意:</p>
-<ol>
-<li>以后代码出现了莫名其妙的效果,多打断点排查</li>
-<li>state 中对象内容不知道哪发生变动了,首先看看是不是浅拷贝、当作参数之类的问题</li>
-</ol>
+    <p>今天，貌似是下午的时候，发现 vim 指定的 快捷键 <code>f &lt;eveyChar&gt;</code>[^f映射为]失效了。<br>[^f映射为]:vim.easymotion 的 <code>&lt;leader&gt; &lt;leader&gt; &quot;s&quot;</code></p>
+<p>起初以为新的 fl980 键盘有问题，换成 nizX87 还是失效。</p>
+<p>就有点蒙了，试了半天，才确定是 vim.easymotion 的问题，因为相关的 指定行标记跳转也失效，确定了是 leader leader 没有触发。</p>
+<p>得浪费了我一个来小时，上 github 上看了 issue ，果然是出bug了。</p>
+<p>看着有说上一个版本没问题，且记得 vscode 插件有安装其他版本的提示。就回来回退了版本，果然能用了。</p>
+<p>而且也惊讶于 vs 插件版本管理的细致</p>
 
     <p class="suffix-end">__END__</p>
     <!-- <div class="suffix-box">
@@ -104,7 +97,7 @@
             <div class="suffix-box-right">
                 <span class="suffix-box-title">文章作者</span>：Just For Fun
                 <br>
-                <span class="suffix-box-title">文章出处</span>：<a href="/2021/07/04/%E4%B8%8D%E7%9F%A5%E9%81%93%E5%93%AA%E6%94%B9%E4%BA%86/" target="_blank">state 不知道哪改了</a>
+                <span class="suffix-box-title">文章出处</span>：<a href="/2021/07/04/vim-easymotion/" target="_blank">vim.easymotion</a>
                 <br>
                 <span class="suffix-box-title">作者签名</span>：简单地活着, 肆意又精彩.
                 <br>
@@ -119,25 +112,15 @@
   <div class="article-footer">
      
     <div class="article-prev-next">
-      
-      <span>
-        <a href="/2021/07/04/vim-easymotion/" class="prev-prefix">« </a> 上一篇：
-        <a
-          href="/2021/07/04/vim-easymotion/"
-          title="发布于 2021-07-04 11:08"
-          >vim.easymotion</a
-        >
-      </span>
-      <br />
        
       <span>
         下一篇：
         <a
-          href="/2021/07/02/%E5%8F%88%E6%90%9E%E4%BA%86%E4%B8%80%E6%8A%8A%E9%94%AE%E7%9B%98/"
-          title="发布于 2021-07-02 10:42"
-          >又搞了一把键盘</a
+          href="/2021/07/04/%E4%B8%8D%E7%9F%A5%E9%81%93%E5%93%AA%E6%94%B9%E4%BA%86/"
+          title="发布于 2021-07-04 12:06"
+          >state 不知道哪改了</a
         >
-        <a href="/2021/07/02/%E5%8F%88%E6%90%9E%E4%BA%86%E4%B8%80%E6%8A%8A%E9%94%AE%E7%9B%98/" class="next-prefix">» </a>
+        <a href="/2021/07/04/%E4%B8%8D%E7%9F%A5%E9%81%93%E5%93%AA%E6%94%B9%E4%BA%86/" class="next-prefix">» </a>
       </span>
       
     </div>
@@ -330,7 +313,7 @@
                 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/image/header/home.jpg',
             
         ],
-        HomeBannerText  : '他们说你有妄想，说你眼中闪着你生命的光，他们说你所有的梦想都会成真',
+        HomeBannerText  : '老是想搞一些有关那些精灵与龙的故事！莴苣和马铃薯对你我来说才是比较合适的念头',
 
         ArticleHeaderImage : [
             
