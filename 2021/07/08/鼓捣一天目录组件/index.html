@@ -6,7 +6,7 @@
     <meta name="referrer" content="origin">
     <meta http-equiv="Cache-Control" content="no-transform">
     <meta http-equiv="Cache-Control" content="no-siteapp">
-    <title>state 不知道哪改了</title>
+    <title>鼓捣一天目录组件</title>
 
     <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/LongCang.css">
     <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/Monda.css">
@@ -56,19 +56,19 @@
     <div class="header">
         <div class="vertical">
             <div class="inner">
-                <h1 class="header-subtitle">state 不知道哪改了</h1>
+                <h1 class="header-subtitle">鼓捣一天目录组件</h1>
                 <div class="header-subinfo">
                     <p class="article-info-text">
                         <span>
-                            <i class="iconfont icon-time"></i> 发表时间：2021-07-04
+                            <i class="iconfont icon-time"></i> 发表时间：2021-07-08
                         </span>
                         
-                            <span id="/2021/07/04/不知道哪改了/" class="leancloud_visitors" data-flag-title="state 不知道哪改了">
+                            <span id="/2021/07/08/鼓捣一天目录组件/" class="leancloud_visitors" data-flag-title="鼓捣一天目录组件">
                                 <i class="iconfont icon-browse"></i> 阅读：<sapn class="leancloud-visitors-count"></span>
                             </span>
                         
                         <span>
-                            <i class="iconfont icon-interactive"></i> 评论：<span class="valine-comment-count" data-xid="/2021/07/04/不知道哪改了/"></span>
+                            <i class="iconfont icon-interactive"></i> 评论：<span class="valine-comment-count" data-xid="/2021/07/08/鼓捣一天目录组件/"></span>
                         </span>  
                     </p>                 
                 </div>
@@ -82,19 +82,20 @@
         <div id="article">
   <div class="toc"></div>
   <div class="article-body">
-    <p>踩了个坑</p>
-<p>没见 setState 之类的,但是 state 就是被改了</p>
-<p>找了好长时间都没发现是怎么回事</p>
-<p>最后打了一堆断点发现</p>
-<p>是该 state 作为实参传入了父组件传来的函数中</p>
-<p>而父组件的函数操作了这个参数state对象</p>
-<p>应该是浅拷贝的问题</p>
-<p>坑死我了</p>
-<p>SO 以后注意:</p>
-<ol>
-<li>以后代码出现了莫名其妙的效果,多打断点排查</li>
-<li>state 中对象内容不知道哪发生变动了,首先看看是不是浅拷贝、当作参数之类的问题</li>
-</ol>
+    <p>算是正式使用 datav 创建了个组件</p>
+<p>侧边导航栏</p>
+<p>甚至可以说是我整出来的第一个组件</p>
+<p>用的 jquery ，稍微熟悉了一点</p>
+<p>而且也终于用到了一点 transition </p>
+<p>真是本来都忘完了</p>
+<p>不过这用起来虽然熟悉了点，不过还是莫名奇妙的</p>
+<p>总是有哪里影响就失效了</p>
+<p>像是 transition 对 background-image 是不生效的</p>
+<p>渐变又算是 background-image ，弄了半天就是没效果</p>
+<p>就放弃了，而且再想想需求可能就该放弃，要不然划过过度延迟的感觉可能也不好</p>
+<p>还有本来我以为要当前页面的链接高亮，想着这遍历起来可有点费劲</p>
+<p>后来才发现这高亮可能就是 hover 效果，自己想偏了吓自己</p>
+<p>还就是 transition 需要明天再调试优化一下</p>
 
     <p class="suffix-end">__END__</p>
     <!-- <div class="suffix-box">
@@ -104,7 +105,7 @@
             <div class="suffix-box-right">
                 <span class="suffix-box-title">文章作者</span>：Just For Fun
                 <br>
-                <span class="suffix-box-title">文章出处</span>：<a href="/2021/07/04/%E4%B8%8D%E7%9F%A5%E9%81%93%E5%93%AA%E6%94%B9%E4%BA%86/" target="_blank">state 不知道哪改了</a>
+                <span class="suffix-box-title">文章出处</span>：<a href="/2021/07/08/%E9%BC%93%E6%8D%A3%E4%B8%80%E5%A4%A9%E7%9B%AE%E5%BD%95%E7%BB%84%E4%BB%B6/" target="_blank">鼓捣一天目录组件</a>
                 <br>
                 <span class="suffix-box-title">作者签名</span>：简单地活着, 肆意又精彩.
                 <br>
@@ -119,25 +120,15 @@
   <div class="article-footer">
      
     <div class="article-prev-next">
-      
-      <span>
-        <a href="/2021/07/04/vim-easymotion/" class="prev-prefix">« </a> 上一篇：
-        <a
-          href="/2021/07/04/vim-easymotion/"
-          title="发布于 2021-07-04 11:08"
-          >vim.easymotion</a
-        >
-      </span>
-      <br />
        
       <span>
         下一篇：
         <a
-          href="/2021/07/02/%E5%8F%88%E6%90%9E%E4%BA%86%E4%B8%80%E6%8A%8A%E9%94%AE%E7%9B%98/"
-          title="发布于 2021-07-02 10:42"
-          >又搞了一把键盘</a
+          href="/2021/07/06/%E4%BB%8A%E5%A4%A9%E7%AB%9F%E7%84%B6%E5%BC%84%E5%A5%BD%E4%BA%86nvm%E5%92%8Cdatav%E7%BB%84%E4%BB%B6/"
+          title="发布于 2021-07-06 10:09"
+          >今天竟然弄好了nvm和datav组件</a
         >
-        <a href="/2021/07/02/%E5%8F%88%E6%90%9E%E4%BA%86%E4%B8%80%E6%8A%8A%E9%94%AE%E7%9B%98/" class="next-prefix">» </a>
+        <a href="/2021/07/06/%E4%BB%8A%E5%A4%A9%E7%AB%9F%E7%84%B6%E5%BC%84%E5%A5%BD%E4%BA%86nvm%E5%92%8Cdatav%E7%BB%84%E4%BB%B6/" class="next-prefix">» </a>
       </span>
       
     </div>
@@ -330,7 +321,7 @@
                 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/image/header/home.jpg',
             
         ],
-        HomeBannerText  : '他们说你有妄想，说你眼中闪着你生命的光，他们说你所有的梦想都会成真',
+        HomeBannerText  : '犹记少时拿云志 曾许人见第一流',
 
         ArticleHeaderImage : [
             
