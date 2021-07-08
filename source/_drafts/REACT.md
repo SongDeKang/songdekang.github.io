@@ -1,9 +1,9 @@
 ---
-title: REACT
+title: REACT 井字棋
 tags:
 ---
 
-# 井字棋
+<!-- # 井字棋 -->
 
 ## 环境准备
 
@@ -367,3 +367,169 @@ class Square extends React.Component{
 5. 我们还未定义 handleClick 方法，所以代码还不能正常工作。如果此时点击 Square ，你会在屏幕上看到红色的错误提示，提示内容为： " this.handleClick is not a function "。
   
 **`注意：因为 DOM 元素 <button/> 是一个内置组件[ 哦哦懂了，我一直以为该说时html元素的，原来这是指 react 内置组件啊 ]`**
+
+这时候我们点击 Square 的时候,浏览器汇报从,因为我们还没有定义 handleClick 方法。我们现在来向 Board 里添加 handleClick 方法：
+
+```jsx
+ class Board extends React.Component{
+   constructor(props){
+     super(props)
+     this.state = {
+       squares: Array(9).fill(null)
+     }
+   }
+   
+   handleClick(i){
+     const squares = this.state.squares.slice();
+     // slice 是生成一个深拷贝的新数组么？
+     squares[i] = "X"
+     this.setState({
+       squares:squares
+     })
+     // 还有一点想到就是，这个存状态的数据，竟然不直接 map 生成 jsx ，而是一个个写出来，调用函数，传入 1~9 数字作为索引。
+     // 是让初学者更容易看懂么？
+   }
+
+   renderSquare(i){
+     return (
+       <Square
+        value = {this.state.squares[i]}
+        onClick = {()=>this.handleClick(i)}
+        // 刚才还纳闷，方法为什么都不用箭头函数
+        // 想到可能是：使用箭头函数 或者 bind this 都是解决 this 指向的，方法里面没用到 this 自然不用
+       />
+     )
+   }
+
+   render(){
+     const status = "Next player: X"
+
+     return (
+       <div>
+        <div className="status">{ status }</div>       
+        <div className="board_row">
+          {/* class 我还是用下划线吧，毕竟不会像连字符一样当成两个独立的单词 */}
+          {this.renderSquare(1)}
+          {this.renderSquare(2)}
+          {this.renderSquare(3)}
+        </div>
+        <div className="board_row">
+          {this.renderSquare(4)}
+          {this.renderSquare(5)}
+          {this.renderSquare(6)}
+        </div>
+        <div className="board_row">
+          {this.renderSquare(7)}
+          {this.renderSquare(8)}
+          {this.renderSquare(9)}
+        </div>
+       </div>
+     )
+   }
+ }
+```
+
+现在，我们可以通过点击 Square 来填充那些方格，效果与之前相同。但是，当前 state 没有保存再单个的 Square 组件中，而是保存在了 Board 组件中。每当 Board 的 state 发生变化的时候，这些 Square 组件都会重新渲染一次。把所有的 Square 的 state 保存再 Board 组件中可以让我们在将来判断出游戏的胜者。
+
+因为 Square 组件不再持有 state，因此每次他们被点击的时候，Square 组件就会从 Board 组件中接受值，并且通知 Board 组件。在 React 术语中，我们把目前的 Square 组件称作“受控组件”。在这种情况下，Board 组件完全控制了 Square 组件。
+
+注意，我们调用了 `.slice()` 方法创建了 `squares` 数组的一个副本，而不是直接在现有的数组上进行修改。在协议姐，我们会介绍为什么我们需要创建 `square`数组的副本。
+
+### 为什么不可变性在 React 中非常重要
+
+在上一节内容当中，我们建议使用 `.slice()` 方法对数组进行拷贝，而非直接修改现有的数组。
+接下来我们学习 **不可变性** 以及 **不可变性的重要性**。
+
+一般来说，有两种改变数据的方式。第一种方式是直接 *修改* 变量的值，第二种方式是 *使用新的一份数据替换旧数据* 
+
+**直接修改数据：**
+
+```js
+var player = {score:1,name:'jeff'};
+play.score = 2;
+// player 修改后的值为 {score:2,name:'jeff'}
+```
+
+**新数据替换旧数据：**
+
+```js
+var player = {score:1,name:'jeff'}
+var newPlayer = Object.assign({},player,{score:2});
+// player 的值没有改变， newPlayer 的值为 {score:2,name:'jeff'}
+
+// 使用对象展开语法，可以写成：
+var newPlayer= {...player,score:2}
+```
+
+不直接修改（或改变底层数据）这种方式和前一种方式的结果是一样的，这种方式有一些几点好处：
+
+#### 简化复杂的功能
+
+不可变性使得复杂的特性更容易实现。在后面的章节里，我们会实现一种叫做“时间旅行”的功能。“时间旅行”可以使我们回顾井字棋的历史步骤，并且可以“跳回”之前的步骤。这个功能并不是只有游戏才会用到————撤销和恢复功能在开发中是一个很常见的需求。<!--确实，我有一个取消的功能就没有实现-->不直接修改可以让我们追溯并复用游戏的历史纪录。
+
+#### 跟踪数据的变化
+
+如果直接修改数据，那么就很难跟踪到数据的改变。跟踪数据的改变需要可变对象可以与改变之前的版本进行对比，这样整个对象树都需要被遍历一次。
+
+跟踪不可变数据的变化相对来说就容易多了。如果发现对象变成了一个新对象，那么我们就可以说对象发生改变了。
+
+#### 确定在 React 中何时重新渲染
+
+不可变性最主要的优势在于它可以帮助我们在 React 中创建 *pure components* 。我们可以很轻松的确定不可变数据是否发生了改变，从而确定合适对组件进行重新渲染。
+
+查阅性能优化章节，以了解更多有关 should ComponentUpdate() 函数及如何构建 pure components 的内容。
+
+#### 函数组件
+
+接下来我们把 Square 组件重写为一个 **函数组件**。
+
+如果你想写的组件只包含一个 render 方法，并且不包含 state ，那么使用 **函数组件** 就会更简单。 我们不需要定义一个 继承于 React.Component 的类，我们可以定义一个函数，这个函数接受 *props* 作为参数，然后返回需要渲染的元素。函数组件写起来不像 class 组件那么繁琐，很多组件都可以使用函数组件来写。
+
+把 Square 类替换成下面的函数：
+
+```js
+function Square(props){
+  return (
+    <button className = "square" onClick={props.onClick}> {props.value} </button>
+  )
+}
+```
+
+我们把两个 this.props 都换成了 props 。
+
+**`注意：当我们把 Square 修改成函数组件时，我们同时也把 onClick={()=>this.props.onClick()} 改成了更短的 onClick={props.onClick}`(注意：两侧都没括号)**
+<!-- 光让我注意，也不讲讲为啥 -->
+
+### 轮流落子
+
+现在井字棋还有一个明显的缺陷有待完善：目前还不能在棋盘上标记 "O"。
+我们将 "X" 默认设置为先手棋。你可以通过修改 Board 组件构造函数中的初始 state 来设置默认的第一步棋子：
+
+```js
+class Board extends React.Component{
+  constructor(props){
+    super(props)
+    this.state = {
+      square:Array(9).fill(null),
+      xIsNext:true,
+      // 我还在想，不是说设置默认先手棋么?为啥不直接整个 first: 'X',
+      // 就是没想到这个可以直接判断每一步该落什么子，X 落过子之后，把 xIsNext 设置为 false 就能直接落 'O' 子了
+    }
+  }
+}
+```
+
+棋子每移动一步，xIsNext（布尔值）都会反转，该值将确定下一步轮到哪个玩家，并且游戏的状态会被保存下来。我们将通过修改 Board 组件的函数 handleClick 函数来反转 xIsNext 的值：
+
+```js
+handleClick(i){
+  const square = this.state.squares.clice();
+  square[i] = this.state.xIsNext ? "X" : "O";
+  this.setState({
+    squares:square,
+    xIsNext:!this.state.xIsNext,
+  })
+}
+```
+
+修改之后，我们就实现了 “X” 和 "O" 轮流落子的效果，试玩一下。
