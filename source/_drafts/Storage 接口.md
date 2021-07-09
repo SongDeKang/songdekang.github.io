@@ -11,7 +11,7 @@ tags:
 	- [Storage.clear()](#storageclear)
 	- [Storage.key()](#storagekey)
 - [storage 事件](#storage-事件)
-
+~\Desktop\blog\source\_posts\2021-07-10-面向搜索引擎编程.md
 ## 概述
 
 Storage 接口用于脚本再浏览器保存数据。两个对象部署了这个接口：`window.sessionStorage`和`window.localStorage`。
