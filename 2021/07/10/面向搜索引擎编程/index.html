@@ -6,7 +6,7 @@
     <meta name="referrer" content="origin">
     <meta http-equiv="Cache-Control" content="no-transform">
     <meta http-equiv="Cache-Control" content="no-siteapp">
-    <title>归档</title>
+    <title>面向搜索引擎编程</title>
 
     <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/LongCang.css">
     <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/Monda.css">
@@ -17,90 +17,126 @@
     <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/Rosario.css">
     <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/UbuntuMono.css">
 
-    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/archive.css">
+    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/post.css">
+    
+        <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/css/normal.css">
+    
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/js/jquery-3.4.1.min.js"></script>
+
+    <style>
+        html,body{
+            text-indent: 2em;
+            font-family: 宋体;
+            line-height: 1.8em;
+            background: rgba(255, 255, 255, 0.3);
+            /* box-shadow: 0 2px 6px rgb(0 0 0 / 65%) */
+        }
+        .article-prev-next{
+            display: flex;
+            justify-content: space-between;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            padding: 0;
+            text-align:center
+        }
+        .article-body p {
+            text-indent:2em;
+            font-size: 16px;
+        }
+        /* 
+            TODO: 试了下，把短少的正文，使用flex布局，居中。看着还不错的
+        */
+    </style>
+
 <meta name="generator" content="Hexo 5.3.0"></head>
 <body>
     <a id="cover"></a>
     <div id="header">
-    <div class="header" >
+    <div class="header">
         <div class="vertical">
             <div class="inner">
-                <h1 class="header-title">Just For Fun</h1>
-                <h2 class="header-description" id="hitokoto"></h2>
-                <!-- <h3 class="header-info" id="hitokotoAuthor"></h3> -->
-                <!--
-                <h1 class="header-subtitle"></h1>
-                <p class="header-subinfo"></p>
-                -->
+                <h1 class="header-subtitle">面向搜索引擎编程</h1>
+                <div class="header-subinfo">
+                    <p class="article-info-text">
+                        <span>
+                            <i class="iconfont icon-time"></i> 发表时间：2021-07-10
+                        </span>
+                        
+                            <span id="/2021/07/10/面向搜索引擎编程/" class="leancloud_visitors" data-flag-title="面向搜索引擎编程">
+                                <i class="iconfont icon-browse"></i> 阅读：<sapn class="leancloud-visitors-count"></span>
+                            </span>
+                        
+                        <span>
+                            <i class="iconfont icon-interactive"></i> 评论：<span class="valine-comment-count" data-xid="/2021/07/10/面向搜索引擎编程/"></span>
+                        </span>  
+                    </p>                 
+                </div>
             </div>
         </div>
-        <a class="scroll-down" href="javascript:;" target="_self" data-offset="-45">
-            <span class="hidden">Scroll Down</span>
-            <i class="scroll-down-icon iconfont icon-return"></i>
-        </a>
+        <canvas id="articleHeaderCanvas"></canvas>
     </div>
 </div>
-    <div id="container">
+    <div id="container" style="max-width: 740px !important">
     <div id="content">
-          
-    <div class="articles-year">
-        <h2>2021</h2>
-        <ul class="list">
-            
-                <li>
-                    <span class="date">2021/07/10</span>
-                    <a href="/2021/07/10/%E9%9D%A2%E5%90%91%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E7%BC%96%E7%A8%8B/" title="面向搜索引擎编程">    
-                        <span>面向搜索引擎编程</span>
-                    </a>
-                </li>
-            
-                <li>
-                    <span class="date">2021/07/08</span>
-                    <a href="/2021/07/08/%E9%BC%93%E6%8D%A3%E4%B8%80%E5%A4%A9%E7%9B%AE%E5%BD%95%E7%BB%84%E4%BB%B6/" title="鼓捣一天目录组件">    
-                        <span>鼓捣一天目录组件</span>
-                    </a>
-                </li>
-            
-                <li>
-                    <span class="date">2021/07/06</span>
-                    <a href="/2021/07/06/%E4%BB%8A%E5%A4%A9%E7%AB%9F%E7%84%B6%E5%BC%84%E5%A5%BD%E4%BA%86nvm%E5%92%8Cdatav%E7%BB%84%E4%BB%B6/" title="今天竟然弄好了nvm和datav组件">    
-                        <span>今天竟然弄好了nvm和datav组件</span>
-                    </a>
-                </li>
-            
-                <li>
-                    <span class="date">2021/07/04</span>
-                    <a href="/2021/07/04/vim-easymotion/" title="vim.easymotion">    
-                        <span>vim.easymotion</span>
-                    </a>
-                </li>
-            
-                <li>
-                    <span class="date">2021/07/04</span>
-                    <a href="/2021/07/04/%E4%B8%8D%E7%9F%A5%E9%81%93%E5%93%AA%E6%94%B9%E4%BA%86/" title="state 不知道哪改了">    
-                        <span>state 不知道哪改了</span>
-                    </a>
-                </li>
-            
-                <li>
-                    <span class="date">2021/07/02</span>
-                    <a href="/2021/07/02/%E5%8F%88%E6%90%9E%E4%BA%86%E4%B8%80%E6%8A%8A%E9%94%AE%E7%9B%98/" title="又搞了一把键盘">    
-                        <span>又搞了一把键盘</span>
-                    </a>
-                </li>
-            
-                <li>
-                    <span class="date">2021/07/01</span>
-                    <a href="/2021/07/01/%E7%AD%8B%E7%96%B2%E5%8A%9B%E5%B0%BD/" title="筋疲力尽">    
-                        <span>筋疲力尽</span>
-                    </a>
-                </li>
-            
-        </ul>
-    </div>
+        <div id="article">
+  <div class="toc"></div>
+  <div class="article-body">
+    <h2 id="属实是不想"><a href="#属实是不想" class="headerlink" title="属实是不想"></a>属实是不想</h2><p>属实是不想再面向搜索引擎编程了,不过真是到敲码如飞,有乐无苦的境界,肯定是还需要很长很长的时间的。</p>
+<h2 id="谷歌搜起来好点"><a href="#谷歌搜起来好点" class="headerlink" title="谷歌搜起来好点"></a>谷歌搜起来好点</h2><p>今天就是面向搜索引擎编程的一天。</p>
+<p>从下午开始用公司电脑拉推我GitHub上的博客，就弄不下来，搜了半天，也确实是莫名起名解决了一点问题。</p>
+<p>到晚上，或者说是凌晨，又建了一个库，用来以后保存所有的 DEMO 。为了方便 git 提交代码，又添加了一个 <em>批处理文件</em> ,这个小东西也搞了我很长时间,搜了不少问题。而且发现 bing 搜不到的问题解答，google 上确实就能直接找到，bing上大多都是 csdn 的，而 google 是 StackOverflow ，好像是不可同日而语啊。</p>
+<p>然后又想着 hexo 生成新文件之后，还要手点一下打开，完全没有必要啊。<br>就又去找解决方法，这个是直接 csdn 上看到了就。</p>
+<p>不管怎么样，今天也是面向搜索引擎编程的一天啊</p>
 
+    <p class="suffix-end">__END__</p>
+    <!-- <div class="suffix-box">
+            <div class="suffix-box-left">
+                <img src="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/image/sidebar/avatar.jpg" alt="Just For Fun">
+            </div>
+            <div class="suffix-box-right">
+                <span class="suffix-box-title">文章作者</span>：Just For Fun
+                <br>
+                <span class="suffix-box-title">文章出处</span>：<a href="/2021/07/10/%E9%9D%A2%E5%90%91%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E7%BC%96%E7%A8%8B/" target="_blank">面向搜索引擎编程</a>
+                <br>
+                <span class="suffix-box-title">作者签名</span>：简单地活着, 肆意又精彩.
+                <br>
+                <span class="suffix-box-title">关于主题</span>：<a href="https://github.com/first19326/Hexo-LiveForCode" target="_blank">Hexo - Live For Code</a>
+                <br>
+                <span class="suffix-box-title">版权声明</span>：文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" title="BY-NC-SA" target="_blank">BY-NC-SA</a> 许可协议，转载请注明出处
+                <br>
+            </div>
+            <div style="clear: both;"></div>
+        </div> -->
+  </div>
+  <div class="article-footer">
+     
+    <div class="article-prev-next">
+       
+      <span>
+        下一篇：
+        <a
+          href="/2021/07/08/%E9%BC%93%E6%8D%A3%E4%B8%80%E5%A4%A9%E7%9B%AE%E5%BD%95%E7%BB%84%E4%BB%B6/"
+          title="发布于 2021-07-08 12:19"
+          >鼓捣一天目录组件</a
+        >
+        <a href="/2021/07/08/%E9%BC%93%E6%8D%A3%E4%B8%80%E5%A4%A9%E7%9B%AE%E5%BD%95%E7%BB%84%E4%BB%B6/" class="next-prefix">» </a>
+      </span>
+      
+    </div>
+  </div>
+  <!-- 
+    <div class="article-comments">
+        <div class="comments-title">
+            评论列表
+        </div>
+        <div class="comments-content">
+        </div>
+    </div>
+ -->
+  <!-- html 注释对 ejs 依旧有效啊 -->
+  <!-- 只是标签颜色还是看不太出来 -->
+</div>
 
     </div>
 </div>
@@ -277,7 +313,7 @@
                 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/image/header/home.jpg',
             
         ],
-        HomeBannerText  : '他们说你有妄想，说你眼中闪着你生命的光，他们说你所有的梦想都会成真',
+        HomeBannerText  : '老是想搞一些有关那些精灵与龙的故事！莴苣和马铃薯对你我来说才是比较合适的念头',
 
         ArticleHeaderImage : [
             
