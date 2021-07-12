@@ -6,7 +6,7 @@
     <meta name="referrer" content="origin">
     <meta http-equiv="Cache-Control" content="no-transform">
     <meta http-equiv="Cache-Control" content="no-siteapp">
-    <title>打字随敲</title>
+    <title>React hook</title>
 
     <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/LongCang.css">
     <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/font/Monda.css">
@@ -56,19 +56,19 @@
     <div class="header">
         <div class="vertical">
             <div class="inner">
-                <h1 class="header-subtitle">打字随敲</h1>
+                <h1 class="header-subtitle">React hook</h1>
                 <div class="header-subinfo">
                     <p class="article-info-text">
                         <span>
-                            <i class="iconfont icon-time"></i> 发表时间：2021-06-28
+                            <i class="iconfont icon-time"></i> 发表时间：2021-07-12
                         </span>
                         
-                            <span id="/2021/06/28/打字随敲/" class="leancloud_visitors" data-flag-title="打字随敲">
+                            <span id="/2021/07/12/React-hook/" class="leancloud_visitors" data-flag-title="React hook">
                                 <i class="iconfont icon-browse"></i> 阅读：<sapn class="leancloud-visitors-count"></span>
                             </span>
                         
                         <span>
-                            <i class="iconfont icon-interactive"></i> 评论：<span class="valine-comment-count" data-xid="/2021/06/28/打字随敲/"></span>
+                            <i class="iconfont icon-interactive"></i> 评论：<span class="valine-comment-count" data-xid="/2021/07/12/React-hook/"></span>
                         </span>  
                     </p>                 
                 </div>
@@ -82,28 +82,36 @@
         <div id="article">
   <div class="toc"></div>
   <div class="article-body">
-    <h2 id="随敲"><a href="#随敲" class="headerlink" title="随敲"></a>随敲</h2><p>今天想着,看不进文档的话,可以从头完完全全跟着敲一遍。其实也不是今天才想到，应该有这个念头挺久了，之前看一个大佬的学习方法就是，整本书整本书的跟着敲一遍。有效仿之心，又怕时间花销大、收获小。不过或说回来，还是那句话，收获再小起码还是有点收获，要是依旧什么都不做的话才是真的浪费。</p>
+    <h2 id="HOOK-简介"><a href="#HOOK-简介" class="headerlink" title="HOOK 简介"></a>HOOK 简介</h2><p><em>Hook</em> 是 React 16.8 的新增特性。它可以让你在不编写 class 的情况下使用 state 以及其他的 React 特性。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React,&#123; useState &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Example</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"> <span class="comment">// 声明一个叫做 count 的 state 变量</span></span><br><span class="line"> <span class="keyword">const</span> [count, setCount] = useState(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"> <span class="keyword">return</span> (</span><br><span class="line">  <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>You clicked &#123;count&#125; times<span class="tag">&lt;/<span class="name">p</span>&gt;</span> </span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span>=&gt;</span>setCount(count+1)&#125;&gt;</span></span><br><span class="line"><span class="xml">      Click me</span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"> )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>useState</code> 是我们要学习的第一个”Hook”,这个例子是简单的演示，如果不理解也不用担心。</p>
+<p><strong>你将在下一章正式开始学习 Hook</strong>。这一章节，我们将会解释为什么会在 React 中加入 Hook，以及如何使用Hook写出更好的应用。</p>
+<p><strong><code>React 16.8.0 是第一个支持 Hook 的版本。升级时，请注意更新所有的 package，包括 ReactDOM 。 ReactNative 从 0.59 版本开始支持 Hook 。</code></strong></p>
+<h3 id="没有破坏性的改动"><a href="#没有破坏性的改动" class="headerlink" title="没有破坏性的改动"></a>没有破坏性的改动</h3><p>在我们继续之前，请记住 Hook 是：</p>
 <ul>
-<li>想着敲 nodejs 的文档</li>
-<li>又想到首要之急，该是react hook组件、typescript、和Vue3</li>
-<li>还看到每天有些公众话的文章也确实挺不错</li>
+<li><strong>完全可选的</strong>。你无须重写任何已有的代码就可以在一些组件中尝试 Hook 。但是如果你不想，你不必现在就去学习或使用 Hook。</li>
+<li><strong>100%向后兼容</strong>。Hook 不包含任何破坏性改动</li>
+<li><strong>现在可用</strong>。Hook 已发布于 v16.8.0</li>
 </ul>
-<p>都想开始</p>
-<h2 id="三件小事"><a href="#三件小事" class="headerlink" title="三件小事"></a>三件小事</h2><ol>
-<li>每天刷两次牙</li>
-<li>十个最简单的俯卧撑</li>
-<li>一篇短记</li>
-</ol>
-<p>不管怎么样，先坚持一个月看看。</p>
-<p>刷牙这个确实都不太应该当作目标啊，不过就这样吧。前些天比较累，早上起不来，赶时间，漱漱口抹把脸就赶地铁上班了，真的是莫得办法。<br>放任下去也确实不是个事。</p>
-<h2 id="一条分割线"><a href="#一条分割线" class="headerlink" title="一条分割线"></a>一条分割线</h2><p>今天又发现一个博主，挺有意思的，看他的标题分割线就挺有意思，是一个边框，然后一条白色的伪元素定位bottom负值，放在边框下面，一个有点层次感，有些特别的边框。一些很小的细节也是有心了。  </p>
-<p>还有就是，我现在正文的宽度是按照 old j 的博客调的 740px ,今天发现这位是 800px ，也不错。他博客样式确实看着也很不错。</p>
-<p>对了，还有他的段落 text-align 设置的是 justify ，也是长见识了，我本来还想看看他字间距 letter-space 设置多少来的</p>
-<h2 id="早起-6：30"><a href="#早起-6：30" class="headerlink" title="早起 6：30"></a>早起 6：30</h2><p>这个倒确实是今天的突发奇想，因为我晚上太累了，就该早点睡觉（虽说有时候完全睡不着）。</p>
-<p>其次是，我可能是早上喝点咖啡的原因，中午午休时也是不太好入睡，想着早上时间多提前一些，早点喝。再顺便搞搞打字随敲的勾当，就可以一举多得了。</p>
-<p>就是打这一会字，右手中指就有点开始算是疼了。想再搞把键盘了，FL980，可惜一直没货，还不知道按键压力能不能适应。</p>
-<p>不说了，先睡觉看看明早 <code>6:30</code> 能不能起来，对着文档敲一敲了。</p>
-<h2 id="PLUS："><a href="#PLUS：" class="headerlink" title="PLUS："></a>PLUS：</h2><p>今天倒是意外的相当清闲，应该也还能清闲几天。</p>
+<p><strong>没有计划从 React 中移除 class</strong>。你可以在本页底部的章节读到更多关于 Hook 的渐进策略。</p>
+<p><strong>Hook 不会影响你对 React 概念的理解。</strong>恰恰相反，Hook为已知的 React 概念提供了更直接的 API：props，state，context，refs以及生命周期。稍后我们将看到，Hook还提供了一种更强大的方式来组合他们。</p>
+<p><strong>如果你不想了解添加 Hook 的具体原因，可以直接跳到下一章节开始学习 Hook！</strong>当然你也可以继续阅读这一章节来了解原因，并且可以学习到如何不重写应用的情况下使用 Hook。</p>
+<h3 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h3><p>Hook 解决了我们五年来编写和维护成千上万的组件时遇到的各种各样看起来不相关的问题。无论你正在学习 React，或每天使用，或者更愿意尝试另一个和 React 有相似组件模型的框架，你都可能对这些问题似曾相识。</p>
+<h3 id="在组件之间复用状态逻辑很难"><a href="#在组件之间复用状态逻辑很难" class="headerlink" title="在组件之间复用状态逻辑很难"></a>在组件之间复用状态逻辑很难</h3><p>React 没有提供将可复用性行为”附加”到组件的途径（<strong>例如：把组件连接到 store</strong>）。如果你是用过 React 一段时间，你也许会熟悉一些解决此类问题的方案，比如 <code>render props</code>和<code>高阶组件</code>。但是这类方案需要重新组织你的组件结构，这可能会很麻烦，使你的代码难以理解。如果你在 React DevTools 中观察过 React 应用，你会发现由 providers，consumers，高阶组件，render props等其他抽象层组成的组件会形成“嵌套地狱”。尽管我们可以在 DevTools 过滤掉它们，但这说明了一个更深层次的问题：<strong>React 需要为共享状态逻辑提供更好的原生途径</strong>。</p>
+<p>你可以使用 Hook 从组件中提取状态逻辑，使得这些逻辑可以单独测试并复用。<strong>Hook 使你在无需修改组件结构的情况下复用状态逻辑</strong>。这使得在组件间或社区内共享 Hook 变得很便捷。</p>
+<p>具体将在自定义 Hook 中对此展开更多的讨论。</p>
+<h3 id="复杂组件变得难以理解"><a href="#复杂组件变得难以理解" class="headerlink" title="复杂组件变得难以理解"></a>复杂组件变得难以理解</h3><p>我们经常维护一些组件，组件起初很简单，但是逐渐会被状态逻辑和副作用充斥。每个生命周期常常包含一些不相关的逻辑。例如，组件经常在 <code>componentDidMount</code> 和 <code>componentDidUpdate</code>中获取数据。但是，同一个<code>componentDidMount</code>中可能也包含很多其它的逻辑，如设置事件监听，而之后需在<code>componentWillUnmount</code>中清除。相互关联且需要对照修改的代码被进行了拆分，而完全不相关的代码却在同一个方法中组合在一起。如此很容易产生 bug ，并且导致逻辑不一致。</p>
+<p>在多数情况下，不可能将组件拆分为更小的粒度，因为状态逻辑无处不在。这也给测试带来了一定挑战。同时，这也是很多人将 React 与状态管理库结合使用的原因之一。但是，这往往会引入很多抽象概念，需要你在不同的文件之间来回切换，使得复用变得更加困难。</p>
+<p>为了解决这个问题，<strong>Hook 将组件中相互关联的部分拆分成更小的函数（比如设置订阅或请求数据）</strong>，而并非强制按照生命周期划分。你还可以使用 reducer 来管理组建的内部状态，使其更加可预测。</p>
+<p>我们将在使用<code>EffectHook</code>中对此展开更多的讨论</p>
+<h3 id="难以理解的-class"><a href="#难以理解的-class" class="headerlink" title="难以理解的 class"></a>难以理解的 class</h3><p>除了代码复用和代码管理会遇到困难外,我们还发现 class 是学习 React 的一大屏障。你必须去理解 JavaScript 中 this 的工作方式，这与其他语言存在巨大的差异。还不能忘记绑定事件处理器。没有稳定的语法提案，这些代码非常冗余。大家可以很好地理解 props，state 和自顶向下的数据流，但对 class 却一筹莫展。即便在有经验的 React 开发者之间，对于函数组件与 class 组件的差异也存在分歧，甚至还要区分两种组件的使用场景。</p>
+<p>另外，React 已经发布五年了，我们希望他能在下一个五年也与时俱进。就像 Svelte,Angular,Glimmer等其它库展示的那样,组件预编译会带来巨大的潜力。尤其是在它不局限于模板的时候。最近，我们一直在使用 Prepack 来试验 component folding，也取得了初步成效。但是我们发现使用 class 组件会无意中鼓励开发者使用一些让优化措施无效的方案。class 也给目前的工具带来了一些问题。例如，class 不能含好的压缩，并且会使热重载出现不稳定的情况。因此，我们想提供一个使代码更易于优化的 API。</p>
+<p>为了解决这些问题，<strong>Hook使你在非 class 的情况下可以使用更多的 React 特性</strong>从概念上来讲,React 组件一直更像是函数。而 Hook 则拥抱了函数,同时也没有牺牲 React 的精神原则。Hook 提供了问题的解决方案，无需学习复杂的函数式或响应式的编程技术。</p>
+<h3 id="监禁策略"><a href="#监禁策略" class="headerlink" title="监禁策略"></a>监禁策略</h3><p><strong><code>总结: 没有计划从 React 中移除 class</code></strong></p>
+<p>大部分 React 开发者会专注于开发产品,而没时间关注每一个新 API 的发布。Hook 还很新，也许有更多的示例和教程后，再考虑学习或使用它们也不迟。</p>
+<p>我们也明白向 React 添加新的原生概念的门槛非常高。我们为好奇的读者准备了详细的征求意见文档，在文档中用更多细节深入讨论了我们推进这件事的冬季，也在具体设计决策和相关先进技术上提供了额外的视角。</p>
+<p><strong>最重要的是，Hook和现有代码可以同时工作，你可以渐进式地使用他们。</strong>不用急着迁移到Hook。我们建议避免任何”大规模重写”,尤其是对于现有的、复杂的 class 组件。开始“用 Hook 的方式思考”前，需要做一些思维上的转变。按照我们的经验，最好现在新的不复杂的组件中尝试使用 Hook，并确保团队中的每一位成员都能适应。在你尝试使用Hook后，欢迎给我们提供反馈，无论好坏。</p>
+<p>我们准备让 Hook 覆盖所有 class 组件的使用场景，但是我们将继续为class 组件提供支持。在Facebook，我们有成千上万的组件用 class 书写，我们完全没有重写他们的计划。相反，我们开始在新的代码中同时使用 Hook 和 class 。</p>
 
     <p class="suffix-end">__END__</p>
     <!-- <div class="suffix-box">
@@ -113,7 +121,7 @@
             <div class="suffix-box-right">
                 <span class="suffix-box-title">文章作者</span>：Just For Fun
                 <br>
-                <span class="suffix-box-title">文章出处</span>：<a href="/2021/06/28/%E6%89%93%E5%AD%97%E9%9A%8F%E6%95%B2/" target="_blank">打字随敲</a>
+                <span class="suffix-box-title">文章出处</span>：<a href="/2021/07/12/React-hook/" target="_blank">React hook</a>
                 <br>
                 <span class="suffix-box-title">作者签名</span>：简单地活着, 肆意又精彩.
                 <br>
@@ -128,25 +136,15 @@
   <div class="article-footer">
      
     <div class="article-prev-next">
-      
-      <span>
-        <a href="/2021/06/29/ES6%E5%BE%AA%E7%8E%AF%E5%8F%8A%E5%8F%AF%E8%BF%AD%E4%BB%A3%E5%AF%B9%E8%B1%A1/" class="prev-prefix">« </a> 上一篇：
-        <a
-          href="/2021/06/29/ES6%E5%BE%AA%E7%8E%AF%E5%8F%8A%E5%8F%AF%E8%BF%AD%E4%BB%A3%E5%AF%B9%E8%B1%A1/"
-          title="发布于 2021-06-29 12:00"
-          >ES6的循环和可迭代对象</a
-        >
-      </span>
-      <br />
        
       <span>
         下一篇：
         <a
-          href="/2021/06/27/%E8%8F%9C%E4%B9%9F%E6%98%AF%E6%B2%A1%E6%9C%89%E5%8A%9E%E6%B3%95/"
-          title="发布于 2021-06-27 09:26"
-          >菜也是没有办法</a
+          href="/2021/07/11/%E5%B0%86%E8%BF%9B%E9%85%92%E6%9D%AF%E8%8E%AB%E5%81%9C/"
+          title="发布于 2021-07-11 11:50"
+          >将进酒杯莫停</a
         >
-        <a href="/2021/06/27/%E8%8F%9C%E4%B9%9F%E6%98%AF%E6%B2%A1%E6%9C%89%E5%8A%9E%E6%B3%95/" class="next-prefix">» </a>
+        <a href="/2021/07/11/%E5%B0%86%E8%BF%9B%E9%85%92%E6%9D%AF%E8%8E%AB%E5%81%9C/" class="next-prefix">» </a>
       </span>
       
     </div>
@@ -339,7 +337,7 @@
                 'https://cdn.jsdelivr.net/gh/first19326/cdn@master/static/image/header/home.jpg',
             
         ],
-        HomeBannerText  : '犹记少时拿云志 曾许人见第一流',
+        HomeBannerText  : '他们说你有妄想，说你眼中闪着你生命的光，他们说你所有的梦想都会成真',
 
         ArticleHeaderImage : [
             
