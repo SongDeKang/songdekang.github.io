@@ -60,3 +60,91 @@ Hook 是一些可以让你在函数组件里 “钩入” React state 及生命�
 React 内置了一些像 `useState` 这样的Hook。你也可以创建你自己的 Hook 来复用不同组件之间的状态逻辑。我们会先介绍这些内置的 Hook。
 
 ### Effect Hook
+
+你之前可能已经在 React 组件中执行过数据获取、订阅或者手动修改过 DOM。我们统一把这些操作称作“副作用”，或者简称为“作用”。
+
+`useEffect` 就是一个 EffectHook ，给组件增加了操作副作用的能力。它跟 class 组件中的 componentDidMount、componentDidUpdata 和 componentWillUnmount 具有相同的用途，只不过被合并成了一个 API。（我们会在 Effect Hook 里展示对比 useEffect 和这些方法的例子。）
+
+例如，下面这个组件在 React 更新 DOM 后会设置一个页面标题：
+
+```js
+import React, { useState, useEffect } from 'react';
+
+function Example() {
+  const [count, setCount] = useState(0);
+
+  // 相当于 componentDidMount 和 componentDidUpdate:
+  useEffect(() => {
+    // 使用浏览器的 API 更新页面标题
+    document.title = `You clicked ${count} times`;
+  });
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}
+```
+
+当你调用 useEffect 时，就是在告诉 React 在完成对DOM 的更改之后运行你的 “副作用”函数。由于副作用函数是在组件内声明的，所以他们可以访问到组件的 props 和 state。默认情况下， React 会在每次渲染后调用副作用函数————包括第一次渲染的时候。（我们会在使用 EffectHook 中跟 class 组建的生命周期方法做更详细的对比。）
+
+副作用函数还可以通过返回一个函数来指定“清除”副作用。例如在下面的组件中使用副作用函数来订阅好友的在线状态，并通过取消订阅进行清楚操作：
+
+```js
+import React, { useState, useEffect } from 'react';
+
+function FriendStatus(props) {
+  const [isOnline, setIsOnline] = useState(null);
+
+  function handleStatusChange(status) {
+    setIsOnline(status.isOnline);
+  }
+
+  useEffect(() => {
+    ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange);
+    return () => {
+      ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange);
+    };
+  });
+
+  if (isOnline === null) {
+    return 'Loading...';
+  }
+  return isOnline ? 'Online' : 'Offline';
+}
+```
+
+在这个示例中， React 会在组件销毁时取消对 ChatAPI 的订阅，然后在后续渲染时重新执行副作用函数。（如果传给 ChatAPI 的 props.friend.id 没有变化，你也可以告诉 React 跳过重新订阅。）
+
+跟 useState 一样，你可以在组件中多次使用 useEffect：
+
+```js
+代码略...
+```
+
+通过使用Hook，你可以把组件内相关的副作用组织在一起（例如创建订阅及取消订阅），而不要把它们拆分到不同的生命周期函数里。
+
+### Hook 使用规则
+
+Hook 就是 JavaScript 函数，但是使用它们会有两个额外的规则：
+
+- 只能在 **函数最外层** 调用Hook。不要在循环、条件判断或者子函数中调用。
+- 只能在 **React 的函数组件中调用。** *（还有一个地方可以调用 Hook ————就是自定义的 Hook 中，我们稍后会学习到。）*
+
+同时我们提供了 linter 插件来自动执行这些规则。这些规则乍看起来会有一些限制和令人困惑，但是要让 Hook 正常工作，它们至关重要。
+
+### 自定义 Hook
+
+有时候我们会想要在组件之间重用一些状态逻辑。目前为止，有两个主流方案来解决这个问题：高阶组件 和 render props。自定义 Hook 可以让你在不增加组件的情况下达到同样的目的。
+
+前面我们介绍了一个叫 FriendStatus 的组件，它通过 useState 和 useEffect 的 Hook 来订阅一个好友的在线状态。假设我们想在另一组件里重用这个订阅逻辑。
+
+首先，我们把这个逻辑抽取到一个叫做 useFriendStatus 的自定义 Hook 里：
+
+```js
+
+```
